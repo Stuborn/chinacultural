@@ -28,6 +28,7 @@ private EditText et_1;
 //				Intent intent = new Intent(MainActivity.this,NewsDetailActivity.class);
 //				intent.putExtra("url", et_1.getText().toString()+"");
 //				startActivity(intent);
+				//测试123
 				startActivity(new Intent(MainActivity.this,NewsDetailActivity.class));
 				break;
 		}
