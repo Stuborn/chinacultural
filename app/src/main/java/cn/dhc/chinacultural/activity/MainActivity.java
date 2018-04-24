@@ -7,6 +7,9 @@ import android.widget.EditText;
 
 import cn.dhc.chinacultural.R;
 
+/**
+ *
+ */
 public class MainActivity extends BaseAvtivity implements View.OnClickListener{
 private EditText et_1;
 	@Override
