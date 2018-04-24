@@ -8,7 +8,7 @@ import android.widget.EditText;
 import cn.dhc.chinacultural.R;
 
 /**
- *
+ *M
  */
 public class MainActivity extends BaseAvtivity implements View.OnClickListener{
 private EditText et_1;
