@@ -6,29 +6,35 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import cn.dhc.chinacultural.R;
 
-public class ScrollingActivity extends AppCompatActivity implements View.OnClickListener{
 
-    LinearLayout li1,li2,li3,li4,li5,li6;
-    ImageView touxiang,shezhi;
+public class ScrollingActivity extends AppCompatActivity implements View.OnClickListener {
+
+    LinearLayout li1, li2, li3, li4, li5, li6;
+    ImageView touxiang, shezhi;
+    private TextView title_back;
+    private TextView tv_center;
+    private ImageView iv_add;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scrolling);
+        initView();
 
-        li1=findViewById(R.id.wodechuangzuo);
-        li2=findViewById(R.id.wodeshoucang);
-        li3=findViewById(R.id.wodedingyue);
-        li4=findViewById(R.id.wodejifen);
-        li5=findViewById(R.id.wentifankui);
-        li6=findViewById(R.id.guanyu);
+        li1 = findViewById(R.id.wodechuangzuo);
+        li2 = findViewById(R.id.wodeshoucang);
+        li3 = findViewById(R.id.wodedingyue);
+        li4 = findViewById(R.id.wodejifen);
+        li5 = findViewById(R.id.wentifankui);
+        li6 = findViewById(R.id.guanyu);
 
-        touxiang=findViewById(R.id.wode_touxiang);
-        shezhi=findViewById(R.id.iv_more);
+        touxiang = findViewById(R.id.wode_touxiang);
+        shezhi = findViewById(R.id.iv_add);
 
         li1.setOnClickListener(this);
         li2.setOnClickListener(this);
@@ -38,8 +44,6 @@ public class ScrollingActivity extends AppCompatActivity implements View.OnClick
         li6.setOnClickListener(this);
         touxiang.setOnClickListener(this);
         shezhi.setOnClickListener(this);
-
-
 
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -54,7 +58,7 @@ public class ScrollingActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.wodechuangzuo:
                 Intent intent = new Intent();
                 intent.setClass(ScrollingActivity.this, ChuangzuoActivity.class);
@@ -85,7 +89,7 @@ public class ScrollingActivity extends AppCompatActivity implements View.OnClick
                 finish();
                 break;
             case R.id.guanyu:
-                Toast.makeText(getApplicationContext(),"关于我们",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "关于我们", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.wode_touxiang:
                 Intent intent7 = new Intent();
@@ -93,7 +97,7 @@ public class ScrollingActivity extends AppCompatActivity implements View.OnClick
                 ScrollingActivity.this.startActivity(intent7);
                 finish();
                 break;
-            case R.id.iv_more:
+            case R.id.iv_add:
                 Intent intent8 = new Intent();
                 intent8.setClass(ScrollingActivity.this, SettingsActivity.class);
                 ScrollingActivity.this.startActivity(intent8);
@@ -105,4 +109,11 @@ public class ScrollingActivity extends AppCompatActivity implements View.OnClick
         }
     }
 
+    private void initView() {
+        title_back = (TextView) findViewById(R.id.title_back);
+        title_back.setVisibility(View.GONE);
+        tv_center = (TextView) findViewById(R.id.tv_center);
+        iv_add = (ImageView) findViewById(R.id.iv_add);
+        iv_add.setVisibility(View.VISIBLE);
+    }
 }

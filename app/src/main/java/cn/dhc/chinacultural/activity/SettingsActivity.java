@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import cn.dhc.chinacultural.R;
@@ -26,31 +27,22 @@ import cn.dhc.chinacultural.R;
  */
 public class SettingsActivity extends AppCompatActivity {
 
-    LinearLayout li1,li2,li3;
-    ImageView img,back;
-    int i=0;
+    LinearLayout li1, li2, li3;
+    ImageView img, back;
+    int i = 0;
+    private TextView title_back;
+    private TextView tv_center;
+    private ImageView iv_add;
+
     @Override
-    public void onCreate( Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.setting_layout);
-        li1=(LinearLayout) findViewById(R.id.li1);
-        li2=(LinearLayout) findViewById(R.id.li2);
-        li3=(LinearLayout) findViewById(R.id.li3);
-        img=findViewById(R.id.kaiguan);
-        back=findViewById(R.id.iv_back);
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent8 = new Intent();
-                intent8.setClass(SettingsActivity.this, ScrollingActivity.class);
-                SettingsActivity.this.startActivity(intent8);
-                finish();
-            }
-        });
-
-
-
+        initView();
+        li1 = (LinearLayout) findViewById(R.id.li1);
+        li2 = (LinearLayout) findViewById(R.id.li2);
+        li3 = (LinearLayout) findViewById(R.id.li3);
+        img = findViewById(R.id.kaiguan);
 
 
 
@@ -59,21 +51,18 @@ public class SettingsActivity extends AppCompatActivity {
         li1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"清理缓存",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "清理缓存", Toast.LENGTH_SHORT).show();
             }
         });
         li2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==0)
-                {
+                if (i == 0) {
                     img.setImageResource(R.drawable.kai);
-                    i=1;
-                }
-                else
-                {
+                    i = 1;
+                } else {
                     img.setImageResource(R.drawable.guan);
-                    i=0;
+                    i = 0;
                 }
             }
         });
@@ -88,4 +77,11 @@ public class SettingsActivity extends AppCompatActivity {
         });
     }
 
+    private void initView() {
+        title_back = (TextView) findViewById(R.id.title_back);
+        title_back.setText("设置");
+        tv_center = (TextView) findViewById(R.id.tv_center);
+        iv_add = (ImageView) findViewById(R.id.iv_add);
+        iv_add.setVisibility(View.GONE);
+    }
 }

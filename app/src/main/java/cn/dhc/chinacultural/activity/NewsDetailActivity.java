@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import cn.dhc.chinacultural.R;
 
+
 public class NewsDetailActivity extends BaseAvtivity {
 
 	private WebView webView;

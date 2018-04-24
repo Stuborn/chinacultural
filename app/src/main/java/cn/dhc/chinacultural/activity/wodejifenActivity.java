@@ -1,38 +1,40 @@
 package cn.dhc.chinacultural.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import cn.dhc.chinacultural.R;
 
 public class wodejifenActivity extends AppCompatActivity implements View.OnClickListener {
 
     ImageView back;
+    private TextView title_back;
+    private TextView tv_center;
+    private ImageView iv_add;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.wodejifen_activity);
-        back=findViewById(R.id.iv_back);
+        initView();
 
-        back.setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId())
-        {
-            case R.id.iv_back:
-                Intent intent = new Intent();
-                intent.setClass(wodejifenActivity.this, ScrollingActivity.class);
-                wodejifenActivity.this.startActivity(intent);
-                finish();
-                break;
+        switch (v.getId()) {
+
         }
     }
 
+    private void initView() {
+        title_back = (TextView) findViewById(R.id.title_back);
+        title_back.setText("我的积分");
+        tv_center = (TextView) findViewById(R.id.tv_center);
+        iv_add = (ImageView) findViewById(R.id.iv_add);
+    }
 }
