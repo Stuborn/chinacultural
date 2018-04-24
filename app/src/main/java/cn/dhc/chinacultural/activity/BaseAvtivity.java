@@ -1,5 +1,6 @@
 package cn.dhc.chinacultural.activity;
 
+import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Build;
@@ -11,6 +12,9 @@ import android.view.Window;
 
 import java.lang.reflect.Field;
 
+import cn.dhc.chinacultural.R;
+import cn.dhc.chinacultural.widget.CCProgressDialog;
+
 /**
  * Created by zbw on 2018/4/18 15:58.
  */
@@ -20,6 +24,7 @@ public class BaseAvtivity extends AppCompatActivity {
 	 * 是否禁止旋转屏幕
 	 **/
 	private boolean isAllowScreenRoate = false;
+	private CCProgressDialog ccProgressDialog;
 
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,4 +52,15 @@ public class BaseAvtivity extends AppCompatActivity {
 	public void onBack(View v) {
 		this.finish();
 	}
+
+	//初始化加载框
+	protected void initProgressDialog() {
+		ccProgressDialog = CCProgressDialog.create(this, getResources().getString(R.string.common_loading), true, new DialogInterface.OnCancelListener() {
+			@Override
+			public void onCancel(DialogInterface dialog) {
+				ccProgressDialog.dismiss();
+			}
+		});
+	}
+
 }
