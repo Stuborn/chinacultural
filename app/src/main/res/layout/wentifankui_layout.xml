@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <LinearLayout
+        android:layout_alignParentTop="true"
+        android:id="@+id/ti"
+        android:layout_width="360dp"
+        android:layout_height="53dp"
+        android:background="#fff"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="11dp"
+            android:layout_height="21dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="14dp"
+            app:srcCompat="@drawable/fanhui_iconhei" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="68dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="15dp"
+            android:text="问题反馈"
+            android:textColor="#ff666666"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fankui_li1"
+        android:layout_below="@+id/ti"
+        android:layout_width="360dp"
+        android:layout_height="141dp"
+        android:orientation="vertical"
+        android:background="@drawable/wentibg"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fankuixiugai"/>
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/xiangban"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:id="@+id/fankui_li2"
+        android:layout_below="@id/fankui_li1"
+        android:background="#f6f6f6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_marginLeft="13dp"
+            android:layout_width="10dp"
+            android:layout_height="20dp"
+            android:src="@drawable/shuxing"/>
+        <TextView
+            android:layout_marginLeft="9dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="常见问题"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+    <ListView
+        android:layout_below="@id/fankui_li2"
+        android:paddingTop="5dp"
+        android:divider="@null"
+        android:id="@+id/listview_wenti"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f6f6f6">
+
+        <EditText
+            android:id="@+id/wenti_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:hint="期待您的意见反馈..."/>
+    </LinearLayout>
+</RelativeLayout>
