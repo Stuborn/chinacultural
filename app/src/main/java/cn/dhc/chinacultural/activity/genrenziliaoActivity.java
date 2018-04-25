@@ -15,6 +15,7 @@ import cn.dhc.chinacultural.R;
 public class genrenziliaoActivity extends AppCompatActivity implements View.OnClickListener {
 
 
+
     LinearLayout shejiao, touxiang, yonghu, shengri, shouji;
     ImageView back;
     private TextView title_back;
