@@ -1,39 +1,57 @@
 package cn.dhc.chinacultural.activity;
 
-import android.content.Intent;
+import android.app.Activity;
+import android.app.Fragment;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.view.MenuItem;
 
 import cn.dhc.chinacultural.R;
 
-/**
- *M
- */
-public class MainActivity extends BaseAvtivity implements View.OnClickListener{
-private EditText et_1;
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		initView();
-	}
+public class MainActivity extends Activity {
 
-	private void initView() {
-		findViewById(R.id.btn_1).setOnClickListener(this);
-		et_1 = findViewById(R.id.et_1);
-	}
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
-	@Override
-	public void onClick(View view) {
-		switch (view.getId()) {
-			case R.id.btn_1:
-//				Intent intent = new Intent(MainActivity.this,NewsDetailActivity.class);
-//				intent.putExtra("url", et_1.getText().toString()+"");
-//				startActivity(intent);
-				//测试123
-				startActivity(new Intent(MainActivity.this,NewsDetailActivity.class));
-				break;
-		}
-	}
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.massage://资讯
+                    changeFragment(new MassageFra().getMassageFra());
+                    return true;
+                case R.id.government://政务
+                    changeFragment(new GovernmentFra().getGovernmentFra());
+                    return true;
+                case R.id.QA://问答
+                    changeFragment(new QAFra().getQAFra());
+                    return true;
+                case R.id.find://发现
+                    changeFragment(new FindFra().getFindFra());
+                    return true;
+                case R.id.mine://我的
+                    changeFragment(new MineFra().getMineFra());
+                    return true;
+            }
+            return false;
+        }
+    };
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        changeFragment(new MassageFra().getMassageFra());
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationViewHelper.disableShiftMode(navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    }
+
+    private void changeFragment(Fragment fm) {
+        android.app.FragmentManager FragmentManager = getFragmentManager();
+        android.app.FragmentTransaction transaction = FragmentManager.beginTransaction();
+        transaction.replace(R.id.content, fm);
+        transaction.commit();
+    }
+
 }

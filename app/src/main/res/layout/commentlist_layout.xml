@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_head"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/touxiang" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:text="一叶扁舟 2分钟前"
+        android:textColor="#ff999999"
+        android:textSize="12dp"
+        android:layout_alignTop="@+id/iv_head"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_toEndOf="@+id/iv_head"
+        android:layout_toRightOf="@+id/iv_head" />
+
+    <ImageView
+        android:id="@+id/iv_good"
+        android:layout_width="16dp"
+        android:layout_height="17dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="38dp"
+        android:layout_marginRight="38dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/weidianzanicon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="106"
+        android:layout_alignLeft="@id/iv_good"
+        android:layout_marginLeft="20dp"
+        android:layout_alignTop="@id/iv_good"
+        android:textColor="#ff999999"
+        android:textSize="15dp"
+        android:id="@+id/tv_goodnum" />
+
+    <TextView
+        android:id="@+id/tv_context"
+        android:layout_width="291dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_name"
+        android:layout_alignStart="@+id/tv_name"
+        android:layout_below="@+id/tv_goodnum"
+        android:layout_marginTop="17dp"
+        android:layout_marginLeft="-1dp"
+        android:text="很不错的想法，非常支持，希望有时间可以去现场看看~"
+        android:textColor="#333"
+        android:textSize="15sp" />
+
+    <RelativeLayout
+        android:layout_width="290dp"
+        android:layout_height="61dp"
+        android:layout_alignLeft="@+id/tv_name"
+        android:layout_alignStart="@+id/tv_name"
+        android:layout_below="@+id/tv_context"
+        android:layout_marginTop="14dp"
+        android:background="#F4F5F7"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/tv_backname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="简单爱："
+            android:textColor="#999"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="13dp"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_backcontext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_backname"
+            android:layout_alignBottom="@+id/tv_backname"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_toEndOf="@+id/tv_backname"
+            android:layout_toRightOf="@+id/tv_backname"
+            android:text="好的东西值得大家一起支持。"
+            android:textColor="#333"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_backmore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_backname"
+            android:layout_alignStart="@+id/tv_backname"
+            android:layout_below="@+id/tv_backname"
+            android:layout_marginTop="8dp"
+            android:text="共8条回复 >"
+            android:textColor="#E60012"
+            android:textSize="13sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

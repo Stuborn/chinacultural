@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ti"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout5"
+        android:background="#fff">
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="275dp"
+            android:layout_height="31dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/huisoushuokuang"
+            android:selectAllOnFocus="false">
+
+            <ImageView
+                android:layout_alignParentLeft="true"
+                android:id="@+id/find_img"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/soushuoicon" />
+
+            <EditText
+                android:id="@+id/et_find"
+                android:layout_width="235dp"
+                android:layout_height="31dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@+id/find_img"
+                android:layout_toRightOf="@+id/find_img"
+                android:background="#F6F6F6"
+                android:hint="搜索"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:textColor="#333"
+            android:textSize="16sp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="27dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout3">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33dp"
+            android:src="@drawable/zuobiantiao" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="指定搜索内容"
+            android:layout_marginLeft="10dp"
+            android:textColor="#333333" />
+
+        <ImageView
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:src="@drawable/youbiantiao" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout3"
+        android:layout_marginTop="31dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="67dp"
+            android:layout_height="27dp"
+            android:gravity="center"
+            android:text="资讯"
+            android:textSize="13sp"
+            android:textColor="#666"
+            android:background="@drawable/lanmukuang"
+            android:layout_marginBottom="24dp"/>
+        <TextView
+            android:id="@+id/tv_2"
+            android:layout_width="67dp"
+            android:layout_height="27dp"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:textColor="#666"
+            android:text="图集"
+            android:background="@drawable/lanmukuang"
+            android:layout_marginBottom="24dp"/>
+        <TextView
+            android:id="@+id/tv_3"
+            android:layout_width="67dp"
+            android:layout_height="27dp"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:textColor="#666"
+            android:text="视频"
+            android:background="@drawable/lanmukuang"
+            android:layout_marginBottom="24dp"/>
+        <TextView
+            android:id="@+id/tv_4"
+            android:layout_width="67dp"
+            android:layout_height="27dp"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:textColor="#666"
+            android:text="艺术家"
+            android:background="@drawable/lanmukuang"
+            android:layout_marginBottom="24dp"/>
+        <TextView
+            android:id="@+id/tv_5"
+            android:layout_width="67dp"
+            android:layout_height="27dp"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:textColor="#666"
+            android:text="博物馆"
+            android:background="@drawable/lanmukuang"
+            android:layout_marginBottom="24dp"/>
+        <TextView
+            android:id="@+id/tv_6"
+            android:layout_width="67dp"
+            android:layout_height="27dp"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:textColor="#666"
+            android:text="数字报"
+            android:background="@drawable/lanmukuang"
+            android:layout_marginBottom="24dp"/>
+    </LinearLayout>
+</RelativeLayout>

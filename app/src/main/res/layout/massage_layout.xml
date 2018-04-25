@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/msg_lv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:background="#ffe60012">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="12dp"
+            android:adjustViewBounds="false"
+            android:cropToPadding="false"
+            app:srcCompat="@drawable/logo" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="258dp"
+            android:layout_height="31dp"
+            android:layout_alignTop="@+id/logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="13dp"
+            android:background="@drawable/huisoushuokuang"
+            android:selectAllOnFocus="false">
+
+            <ImageView
+                android:id="@+id/find_img"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                app:srcCompat="@drawable/soushuoicon" />
+
+            <TextView
+                android:id="@+id/et_find"
+                android:layout_width="235dp"
+                android:layout_height="31dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@+id/find_img"
+                android:layout_toRightOf="@+id/find_img"
+                android:background="#ffffff"
+                android:textSize="13sp"
+                android:gravity="center_vertical"
+                android:textColor="#999"
+                android:text="搜索"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/btn_img"
+            android:layout_width="22dp"
+            android:layout_height="16dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="13dp"
+            android:layout_marginRight="13dp"
+            app:srcCompat="@drawable/caidanicon" />
+
+    </RelativeLayout>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/HS"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:textSize="17sp"
+        android:fontFamily="@font/noto_sans"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/relativeLayout2"
+        android:background="#fff"
+        app:tabSelectedTextColor="#e60012"
+        app:tabIndicatorColor="#fff"
+        app:tabMode="scrollable">
+
+        <android.support.design.widget.TabItem
+            android:layout_width="79dp"
+            android:layout_height="47dp"
+            android:text="头条"/>
+        <android.support.design.widget.TabItem
+            android:layout_width="79dp"
+            android:layout_height="47dp"
+            android:text="要闻"/>
+        <android.support.design.widget.TabItem
+            android:layout_width="79dp"
+            android:layout_height="47dp"
+            android:text="滚动"/>
+        <android.support.design.widget.TabItem
+            android:layout_width="79dp"
+            android:layout_height="47dp"
+            android:text="图集"/>
+
+        <android.support.design.widget.TabItem
+            android:layout_width="79dp"
+            android:layout_height="47dp"
+            android:icon="@drawable/gengduoicon"
+            android:text=""/>
+    </android.support.design.widget.TabLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/HS"
+        android:background="#DEDEDE"
+        android:orientation="horizontal" />
+
+    <ListView
+        android:id="@+id/massage_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout" />
+
+</RelativeLayout>

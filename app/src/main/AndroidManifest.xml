@@ -13,15 +13,50 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.NewsDetailActivity">
-        </activity>
         <activity android:name=".activity.ScrollingActivity">
+        </activity>
+        <activity
+            android:name=".activity.WelcomeActivity"
+            android:theme="@style/StartTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.MainActivity">
+        </activity>
+        <activity
+            android:name=".activity.ImagesActivity">
+        </activity>
+        <activity
+            android:name=".activity.LanmuActivity">
+        </activity>
+        <activity
+            android:name=".activity.PInglunActivity">
+        </activity>
+        <activity
+            android:name=".activity.IndexActivity">
+        </activity>
+        <activity
+            android:name=".activity.RegisterActivity">
+        </activity>
+        <activity
+            android:name=".activity.SearchActivity">
+        </activity>
+        <activity
+            android:name=".activity.NewsActivity">
+        </activity>
+        <activity
+            android:name=".activity.SearchAfterActivity">
+        </activity>
+        <activity
+            android:name=".activity.MoreLanmuActivity">
+        </activity>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
         <activity
             android:name=".activity.SettingsActivity"
             android:theme="@style/AppTheme.NoActionBar"

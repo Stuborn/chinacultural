@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="334dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="15dp"
+        android:textColor="#333"
+        android:fontFamily="@font/noto_sans"
+        android:text="#关押25年再审6年# 刘忠林故意杀人案改判无罪！"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/img"
+        android:layout_width="334dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/title"
+        android:layout_alignStart="@+id/title"
+        android:layout_below="@+id/title">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/news"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/news"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/news"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    
+    <ImageView
+        android:id="@+id/iv_r"
+        android:layout_width="15dp"
+        android:layout_height="13dp"
+        android:layout_alignLeft="@+id/img"
+        android:layout_alignStart="@+id/img"
+        android:layout_below="@+id/img"
+        android:layout_marginTop="15.7dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginBottom="15dp"
+        app:srcCompat="@drawable/reicon" />
+
+    <TextView
+        android:id="@+id/tv_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iv_r"
+        android:layout_marginLeft="7dp"
+        android:layout_marginStart="7dp"
+        android:layout_toEndOf="@+id/iv_r"
+        android:layout_toRightOf="@+id/iv_r"
+        android:text="TextView"
+        android:textColor="#999"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_a"
+        android:layout_marginLeft="7dp"
+        android:layout_marginStart="7dp"
+        android:layout_toEndOf="@+id/tv_a"
+        android:layout_toRightOf="@+id/tv_a"
+        android:text="刚刚"
+        android:textColor="#999"
+        android:textSize="12sp" />
+
+</RelativeLayout>

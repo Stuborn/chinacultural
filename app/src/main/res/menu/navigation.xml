@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/massage"
+        android:icon="@drawable/zixunicon"
+        android:title="资讯" />
+
+    <item
+        android:id="@+id/government"
+        android:icon="@drawable/zhangwuicon"
+        android:title="政务" />
+
+    <item
+        android:id="@+id/QA"
+        android:icon="@drawable/wendaicon"
+        android:title="问答" />
+
+    <item
+        android:id="@+id/find"
+        android:icon="@drawable/faxianicocn"
+        android:title="发现" />
+
+    <item
+        android:id="@+id/mine"
+        android:icon="@drawable/wodeicon"
+        android:title="我的" />
+
+</menu>

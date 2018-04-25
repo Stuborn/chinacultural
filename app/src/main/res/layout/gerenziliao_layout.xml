@@ -43,7 +43,6 @@
         />
     <LinearLayout
         android:id="@+id/ziliao_yonghu"
-
         android:layout_width="360dp"
         android:layout_height="48dp"
         android:background="#ffffff"
@@ -79,11 +78,9 @@
         />
     <LinearLayout
         android:id="@+id/ziliao_shengri"
-
         android:layout_width="360dp"
         android:layout_height="48dp"
         android:background="#ffffff"
-
         android:gravity="center_vertical">
         <TextView
             android:layout_marginLeft="14dp"
@@ -109,18 +106,15 @@
 
     </LinearLayout>
     <View
-
         android:layout_width="match_parent"
         android:layout_height="7dp"
         android:background="#ffdedede"
         />
     <LinearLayout
         android:id="@+id/ziliao_shouji"
-
         android:layout_width="360dp"
         android:layout_height="48dp"
         android:background="#ffffff"
-
         android:gravity="center_vertical">
         <TextView
             android:layout_marginLeft="14dp"
@@ -154,11 +148,9 @@
         />
     <LinearLayout
         android:id="@+id/ziliao_shejiao"
-
         android:layout_width="360dp"
         android:layout_height="48dp"
         android:background="#ffffff"
-
         android:gravity="center_vertical">
         <TextView
             android:layout_marginLeft="14dp"
@@ -184,7 +176,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
-
 
 </LinearLayout>

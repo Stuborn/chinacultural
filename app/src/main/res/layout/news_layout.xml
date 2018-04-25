@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/ti"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="11dp"
+            android:layout_height="21dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/fanhuiiconhei" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="15dp"
+            android:text="中国文化"
+            android:textColor="#ff666666"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/iv_more"
+            android:layout_width="19dp"
+            android:layout_height="3dp"
+            android:layout_marginLeft="212dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/gengduofenxiangiconhei" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ti"
+        android:background="#DEDEDE"
+        android:orientation="horizontal" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linearLayout">
+    <RelativeLayout
+        android:id="@+id/news"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="13dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="专家解读机构改革方案:合并归类重组 改革力度空前"
+            android:textColor="#333333"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tv_w"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/title"
+            android:layout_alignStart="@+id/title"
+            android:layout_below="@+id/title"
+            android:layout_marginTop="14dp"
+            android:text="中国新闻网"
+            android:textColor="#999999"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="98dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_w"
+            android:layout_marginLeft="17dp"
+            android:layout_marginStart="17dp"
+            android:layout_toEndOf="@+id/tv_w"
+            android:layout_toRightOf="@+id/tv_w"
+            android:text="2018-3-12 08:03"
+            android:textColor="#999999"
+            android:textSize="13dp" />
+
+        <ImageView
+            android:id="@+id/iv_p"
+            android:layout_width="333dp"
+            android:layout_height="183dp"
+            android:layout_alignLeft="@+id/title"
+            android:layout_alignStart="@+id/title"
+            android:layout_below="@+id/tv_w"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/img3" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="328dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/iv_p"
+            android:layout_alignStart="@+id/iv_p"
+            android:layout_below="@+id/iv_p"
+            android:layout_marginTop="21dp"
+            android:textColor="#333333"
+            android:textSize="15sp"
+            android:text="中国摩天大楼位于中国高度第一的楼，因为各种原因，中国乃至世界历史上都曾经进行过争夺第一高楼桂冠的比赛，“第一高楼”的纪录也在不断被刷新。\n\n截至现在，中国第一高楼是上海中心大厦高近632米，已完工并开放，现在准备耗资300亿新建636米中国摩天大楼预计2019年完工！中国摩天大楼位于中国高度第一的楼，因各种原因，中国乃至世界历史上都曾经进行过争夺第一高楼桂冠的比赛，“第一高楼”的纪录也在不断被刷新。" />
+
+    </RelativeLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="#fff">
+
+        <LinearLayout
+            android:id="@+id/plk"
+            android:layout_width="283dp"
+            android:layout_height="33dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/pinglunkuang_daun">
+
+            <ImageView
+                android:id="@+id/plimg"
+                android:layout_width="20dp"
+                android:layout_height="15dp"
+                android:src="@drawable/bianjiicon"
+                android:layout_marginLeft="11dp"/>
+
+            <TextView
+                android:id="@+id/tv_addpl"
+                android:background="#F6F6F6"
+                android:layout_width="203dp"
+                android:layout_height="31dp"
+                android:layout_marginLeft="9dp"
+                android:textSize="13sp"
+                android:text="写评论..."
+                android:gravity="center_vertical"
+                android:textColor="#999"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/biaoqingicon"
+                android:layout_marginLeft="9dp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_pllist"
+            android:layout_width="24dp"
+            android:layout_height="21dp"
+            android:src="@drawable/pingllunicon"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="16dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

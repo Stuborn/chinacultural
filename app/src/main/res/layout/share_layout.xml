@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="299dp"
+    android:background="#F6F6F6">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="123dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout6">
+
+        <LinearLayout
+            android:layout_width="61dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="23dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_qq"
+                android:layout_width="61dp"
+                android:layout_height="61dp"
+                android:src="@drawable/qq" />
+
+            <TextView
+                android:id="@+id/tv_qq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="9dp"
+                android:text="QQ好友"
+                android:textColor="#666666"
+                android:textSize="11sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="61dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="23dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_wx"
+                android:layout_width="61dp"
+                android:layout_height="61dp"
+                android:src="@drawable/weix" />
+
+            <TextView
+                android:id="@+id/tv_wx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="9dp"
+                android:text="微信"
+                android:textColor="#666666"
+                android:textSize="11sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="61dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="23dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_wb"
+                android:layout_width="61dp"
+                android:layout_height="61dp"
+                android:src="@drawable/weibo" />
+
+            <TextView
+                android:id="@+id/tv_wb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="9dp"
+                android:text="微博"
+                android:textColor="#666666"
+                android:textSize="11sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="61dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="23dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_pyq"
+                android:layout_width="61dp"
+                android:layout_height="61dp"
+                android:src="@drawable/pengyouquan" />
+
+            <TextView
+                android:id="@+id/tv_pyq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="9dp"
+                android:text="朋友圈"
+                android:textColor="#666666"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="315dp"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout6"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout7"
+        android:background="#DEDEDE"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="126dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout7"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="61dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="23dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_sx"
+                android:layout_width="61dp"
+                android:layout_height="61dp"
+                android:src="@drawable/shauxin" />
+
+            <TextView
+                android:id="@+id/tv_sx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="9dp"
+                android:text="刷新"
+                android:textColor="#666666"
+                android:textSize="11sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="61dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="23dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_fz"
+                android:layout_width="61dp"
+                android:layout_height="61dp"
+                android:src="@drawable/fuzhilianjie" />
+
+            <TextView
+                android:id="@+id/tv_fz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="9dp"
+                android:text="复制链接"
+                android:textColor="#666666"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#fff"
+        android:text="取消"
+        android:textColor="#E60012"
+        android:textSize="17sp" />
+</RelativeLayout>

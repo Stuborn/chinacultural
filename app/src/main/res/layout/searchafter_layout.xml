@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F6F6"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ti"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout5"
+        android:background="#fff">
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="275dp"
+        android:layout_height="31dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/huisoushuokuang"
+        android:selectAllOnFocus="false">
+
+        <ImageView
+            android:id="@+id/find_img"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#fff"
+            android:src="@drawable/soushuoicon" />
+
+        <TextView
+            android:id="@+id/tv_find"
+            android:layout_width="235dp"
+            android:layout_height="31dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@+id/find_img"
+            android:layout_toRightOf="@+id/find_img"
+            android:background="#F6F6F6"
+            android:text="搜索"
+            android:gravity="center_vertical"
+            android:textSize="13sp" />
+        <ImageView
+            android:id="@+id/iv_shanchu"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignEnd="@id/tv_find"
+            android:src="@drawable/shanchuicon"
+            android:layout_alignRight="@id/tv_find"
+            android:layout_marginTop="8dp"/>
+    </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:textColor="#333"
+            android:textSize="16sp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ti"
+        android:background="#DEDEDE"
+        android:orientation="horizontal" />
+
+    <!--<HorizontalScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+    <ListView
+        android:id="@+id/lv_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#fff"
+        android:layout_below="@+id/linearLayout5" />
+    <ListView
+        android:id="@+id/lv_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="8dp"
+        android:background="#fff"
+        android:layout_below="@+id/lv_user" />
+    <ListView
+        android:id="@+id/lv_tuji"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="8dp"
+        android:background="#fff"
+        android:layout_below="@+id/lv_msg" />
+    <ListView
+        android:id="@+id/lv_sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="8dp"
+        android:background="#fff"
+        android:layout_below="@+id/lv_tuji" />
+    <ListView
+        android:id="@+id/lv_sz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="8dp"
+        android:background="#fff"
+        android:layout_below="@+id/lv_sp" />
+    <ListView
+        android:id="@+id/lv_bw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="8dp"
+        android:background="#fff"
+        android:layout_below="@+id/lv_sz" />
+    <!--</HorizontalScrollView>-->
+</RelativeLayout>
