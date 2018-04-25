@@ -65,12 +65,6 @@ public class genrenziliaoActivity extends AppCompatActivity implements View.OnCl
                 genrenziliaoActivity.this.startActivity(intent);
                 finish();
                 break;
-            case R.id.iv_back:
-                Intent intent1 = new Intent();
-                intent1.setClass(genrenziliaoActivity.this, ScrollingActivity.class);
-                genrenziliaoActivity.this.startActivity(intent1);
-                finish();
-                break;
             default:
                 break;
         }
