@@ -6,4 +6,9 @@ package cn.dhc.chinacultural.bean;
  */
 
 public class Constant {
+    public static final String IP = "http://192.168.0.5";
+
+    public static final String HTTPSURL = IP + ":8080/zcm/";
+
+    public static final String URL_LOGIN = HTTPSURL + "zcmlogin/validate?userId=zanboshuai&password=E10ADC3949BA59ABBE56E057F20F883E";
 }
