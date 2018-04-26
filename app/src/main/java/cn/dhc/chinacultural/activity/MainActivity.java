@@ -1,7 +1,7 @@
 package cn.dhc.chinacultural.activity;
 
-import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -16,6 +16,7 @@ public class MainActivity extends BaseAvtivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
             switch (item.getItemId()) {
                 case R.id.massage://资讯
                     changeFragment(new MassageFra().getMassageFra());
@@ -30,17 +31,26 @@ public class MainActivity extends BaseAvtivity {
                     changeFragment(new FindFra().getFindFra());
                     return true;
                 case R.id.mine://我的
-                    changeFragment(new MineFra().getMineFra());
+                    Bundle bundle = new Bundle();
+                    bundle.putString("name", name);
+                    MineFra mineFra = new MineFra().getMineFra();
+
+                    mineFra.setArguments(bundle);
+                    changeFragment(mineFra);
                     return true;
             }
             return false;
         }
     };
+    private Intent intent;
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        intent = getIntent();
+        name = intent.getStringExtra("name");
         changeFragment(new MassageFra().getMassageFra());
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableShiftMode(navigation);

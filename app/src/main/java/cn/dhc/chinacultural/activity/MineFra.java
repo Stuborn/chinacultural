@@ -3,6 +3,7 @@ package cn.dhc.chinacultural.activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,6 +55,9 @@ public class MineFra extends Fragment implements View.OnClickListener {
     private TextView tv_mail_list6;
     private RelativeLayout rl_phone_list6;
     private Intent intent;
+    private String name;
+
+
 
     public static MineFra getMineFra() {
         if (fa == null) {
@@ -65,11 +69,17 @@ public class MineFra extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.activity_scrolling, container, false);
+        if (isAdded()) {//判断Fragment已经依附Activity
+            name = getArguments().getString("name");
+            Log.e("MineFra", name);
+        }
         initView(view);
+
         return view;
     }
 
     private void initView(View view) {
+
         title_back = (TextView) view.findViewById(R.id.title_back);
         tv_center = (TextView) view.findViewById(R.id.tv_center);
         iv_add = (ImageView) view.findViewById(R.id.iv_add);
@@ -84,8 +94,12 @@ public class MineFra extends Fragment implements View.OnClickListener {
         wodejifen = (LinearLayout) view.findViewById(R.id.wodejifen);
         wentifankui = (LinearLayout) view.findViewById(R.id.wentifankui);
         guanyu = (LinearLayout) view.findViewById(R.id.guanyu);
+        if (name.length()== 0) {
+            login_btn.setOnClickListener(this);
+        } else {
+            login_btn.setText(name);
+        }
 
-        login_btn.setOnClickListener(this);
         iv_mail_list = (ImageView) view.findViewById(R.id.iv_mail_list);
         iv_mail_list.setOnClickListener(this);
         tv_mail_list = (TextView) view.findViewById(R.id.tv_mail_list);

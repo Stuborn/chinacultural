@@ -68,6 +68,7 @@ public class IndexActivity extends BaseAvtivity {
 						if (loginBean.isSuccess()){
 							//跳转至 MainActivity
 							Intent intent = new Intent(IndexActivity.this, MainActivity.class);
+							intent.putExtra("name",loginBean.getData().getUserName());
 							startActivity(intent);
 							//结束当前的 Activity
 							IndexActivity.this.finish();
