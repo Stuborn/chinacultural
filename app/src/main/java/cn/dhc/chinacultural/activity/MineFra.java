@@ -3,7 +3,6 @@ package cn.dhc.chinacultural.activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,8 +69,11 @@ public class MineFra extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.activity_scrolling, container, false);
         if (isAdded()) {//判断Fragment已经依附Activity
-            name = getArguments().getString("name");
-            Log.e("MineFra", name);
+            try{
+            name = getArguments().getString("name");}catch (Exception e){
+
+            }
+
         }
         initView(view);
 
@@ -94,10 +96,13 @@ public class MineFra extends Fragment implements View.OnClickListener {
         wodejifen = (LinearLayout) view.findViewById(R.id.wodejifen);
         wentifankui = (LinearLayout) view.findViewById(R.id.wentifankui);
         guanyu = (LinearLayout) view.findViewById(R.id.guanyu);
+        try{
         if (name.length()== 0) {
             login_btn.setOnClickListener(this);
         } else {
             login_btn.setText(name);
+        }}catch (Exception e){
+            login_btn.setOnClickListener(this);
         }
 
         iv_mail_list = (ImageView) view.findViewById(R.id.iv_mail_list);
