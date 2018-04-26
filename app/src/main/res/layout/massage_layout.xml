@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/msg_lv"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/msg_lv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#ffe60012"/>
 
     <RelativeLayout
         android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
         android:layout_height="53dp"
+        android:layout_below="@+id/view1"
         android:background="#ffe60012">
 
         <ImageView
@@ -24,7 +31,7 @@
             android:layout_marginTop="12dp"
             android:adjustViewBounds="false"
             android:cropToPadding="false"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/logo"/>
 
         <RelativeLayout
             android:id="@+id/relativeLayout"
@@ -42,7 +49,7 @@
                 android:layout_height="15dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
-                app:srcCompat="@drawable/soushuoicon" />
+                app:srcCompat="@drawable/soushuoicon"/>
 
             <TextView
                 android:id="@+id/et_find"
@@ -54,10 +61,10 @@
                 android:layout_toEndOf="@+id/find_img"
                 android:layout_toRightOf="@+id/find_img"
                 android:background="#ffffff"
-                android:textSize="13sp"
                 android:gravity="center_vertical"
+                android:text="搜索"
                 android:textColor="#999"
-                android:text="搜索"/>
+                android:textSize="13sp"/>
         </RelativeLayout>
 
         <ImageView
@@ -69,7 +76,7 @@
             android:layout_centerVertical="true"
             android:layout_marginEnd="13dp"
             android:layout_marginRight="13dp"
-            app:srcCompat="@drawable/caidanicon" />
+            app:srcCompat="@drawable/caidanicon"/>
 
     </RelativeLayout>
 
@@ -77,32 +84,16 @@
         android:id="@+id/HS"
         android:layout_width="match_parent"
         android:layout_height="47dp"
-        android:textSize="17sp"
-        android:fontFamily="@font/noto_sans"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/relativeLayout2"
         android:background="#fff"
-        app:tabSelectedTextColor="#e60012"
+        android:fontFamily="@font/noto_sans"
+        android:textSize="17sp"
         app:tabIndicatorColor="#fff"
-        app:tabMode="scrollable">
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="#e60012">
 
-        <android.support.design.widget.TabItem
-            android:layout_width="79dp"
-            android:layout_height="47dp"
-            android:text="头条"/>
-        <android.support.design.widget.TabItem
-            android:layout_width="79dp"
-            android:layout_height="47dp"
-            android:text="要闻"/>
-        <android.support.design.widget.TabItem
-            android:layout_width="79dp"
-            android:layout_height="47dp"
-            android:text="滚动"/>
-        <android.support.design.widget.TabItem
-            android:layout_width="79dp"
-            android:layout_height="47dp"
-            android:text="图集"/>
 
         <android.support.design.widget.TabItem
             android:layout_width="79dp"
@@ -119,7 +110,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/HS"
         android:background="#DEDEDE"
-        android:orientation="horizontal" />
+        android:orientation="horizontal"/>
 
     <ListView
         android:id="@+id/massage_lv"
@@ -127,6 +118,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/linearLayout" />
+        android:layout_below="@+id/linearLayout"/>
 
 </RelativeLayout>

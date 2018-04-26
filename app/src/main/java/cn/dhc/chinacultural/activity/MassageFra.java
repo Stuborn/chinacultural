@@ -2,8 +2,10 @@ package cn.dhc.chinacultural.activity;
 
 import android.app.Fragment;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,6 +24,7 @@ import java.util.Map;
 import cn.dhc.chinacultural.R;
 
 /**
+ * 01.资讯Fragment
  * Created by WYHY on 2018/4/20.
  */
 
@@ -94,6 +98,12 @@ public class MassageFra extends Fragment {
 
 
     public void selectTab(){
+        //tab的下划线颜色
+        tabLayout.setSelectedTabIndicatorColor(Color.RED);
+        for (int i = 0; i < 20; i++) {
+            //添加tab
+            tabLayout.addTab(tabLayout.newTab().setText("TAB" + i));
+        }
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

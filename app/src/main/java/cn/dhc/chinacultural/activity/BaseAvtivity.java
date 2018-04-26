@@ -1,5 +1,7 @@
 package cn.dhc.chinacultural.activity;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
@@ -9,8 +11,10 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 import cn.dhc.chinacultural.R;
 import cn.dhc.chinacultural.widget.CCProgressDialog;
@@ -34,14 +38,9 @@ public class BaseAvtivity extends AppCompatActivity {
 		if (!isAllowScreenRoate) {
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		}
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-			try {
-				Class decorViewClazz = Class.forName("com.android.internal.policy.DecorView");
-				Field field = decorViewClazz.getDeclaredField("mSemiTransparentStatusBarColor");
-				field.setAccessible(true);
-				field.setInt(getWindow().getDecorView(), Color.TRANSPARENT);  //改为透明
-			} catch (Exception e) {
-			}
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) { //透明状态栏
+			getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS); //透明导航栏
+//			getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
 		}
 	}
 	/**
@@ -62,5 +61,24 @@ public class BaseAvtivity extends AppCompatActivity {
 			}
 		});
 	}
+//	protected void setImmerseLayout(View view) {// view为标题栏
+//		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//			Window window = getWindow();
+//			window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//			int statusBarHeight = getStatusBarHeight(this.getBaseContext());
+//			view.setPadding(0, statusBarHeight, 0, 0);
+//		}
+//	}
+//
+//	public int getStatusBarHeight(Context context) {
+//		int result = 0;
+//		int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen",
+//				"android");
+//		if (resourceId > 0) {
+//			result = context.getResources().getDimensionPixelSize(resourceId);
+//		}
+//		return result;
+//	}
+
 
 }

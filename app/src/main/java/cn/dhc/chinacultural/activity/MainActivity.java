@@ -9,7 +9,7 @@ import android.view.MenuItem;
 
 import cn.dhc.chinacultural.R;
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseAvtivity {
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {

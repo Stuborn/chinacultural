@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#F6F6F6">
+    android:background="#fff">
     <LinearLayout
         android:id="@+id/ti"
         android:layout_width="match_parent"
@@ -23,9 +23,9 @@
             android:id="@+id/textView"
             android:layout_width="68dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="23dp"
-            android:layout_marginTop="15dp"
             android:text="更多"
+            android:gravity="center"
+            android:layout_gravity="center"
             android:textColor="#ff666666"
             android:textSize="17sp" />
 
@@ -40,13 +40,12 @@
         android:background="#DEDEDE"
         android:orientation="horizontal" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="49dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/linearLayout"
-        android:orientation="horizontal"
         android:background="#fff"
         android:id="@+id/linearLayout4">
 
@@ -56,36 +55,38 @@
             android:layout_height="wrap_content"
             android:text="栏目切换"
             android:textColor="#333"
+            android:layout_centerVertical="true"
             android:textSize="15sp"
-            android:layout_marginTop="17dp"
             android:layout_marginLeft="14dp"/>
 
         <Button
             android:id="@+id/btn_lanmu_mange"
             android:layout_width="52dp"
             android:layout_height="28dp"
-            android:layout_marginLeft="223dp"
-            android:layout_marginTop="12dp"
             android:background="@drawable/guanlidingyuekuang"
             android:text="管理"
             android:textColor="#E60012"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="14dp"
             android:textSize="15sp" />
         <Button
             android:id="@+id/btn_lanmu"
             android:layout_width="52dp"
             android:layout_height="28dp"
-            android:layout_marginLeft="223dp"
-            android:layout_marginTop="12dp"
             android:background="@drawable/guanlidingyuekuang"
             android:text="完成"
             android:visibility="gone"
             android:textColor="#E60012"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="14dp"
             android:textSize="15sp" />
-    </LinearLayout>
+    </RelativeLayout>
 
     <GridView
         android:layout_width="match_parent"
-        android:layout_height="185dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:numColumns="4"
