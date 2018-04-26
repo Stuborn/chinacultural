@@ -8,15 +8,16 @@ import java.util.List;
 
 public class LanMuYiBean {
 
+
     /**
      * success : true
      * statusCode : 200
      * message : 读取成功
      * token : -999
      * total : 10
-     * rows : [{"id":"lzg_10","title":"title10","source":null,"warehousedTime":null,"allowcomments":null,"categoryId":"1","categoryName":"一级栏目1","articelFrom":"","publishTime":"2018-04-24 19:17:34","thumbnail":null,"templateId":"3","original":"1","h5URL":null,"postNum":null},{"id":"lzg_9","title":"title9","source":null,"warehousedTime":null,"allowcomments":null,"categoryId":"1","categoryName":"一级栏目1","articelFrom":"","publishTime":"2018-04-23 19:17:34","thumbnail":null,"templateId":"3","original":"1","h5URL":null,"postNum":null},{"id":"lzg_8","title":"title8","source":null,"warehousedTime":null,"allowcomments":null,"categoryId":"1","categoryName":"一级栏目1","articelFrom":"","publishTime":"2018-04-22 19:17:34","thumbnail":null,"templateId":"2","original":"1","h5URL":null,"postNum":null},{"id":"lzg_7","title":"title7","source":null,"warehousedTime":null,"allowcomments":null,"categoryId":"1","categoryName":"一级栏目1","articelFrom":"","publishTime":"2018-04-21 19:17:34","thumbnail":null,"templateId":"2","original":"1","h5URL":null,"postNum":null},{"id":"lzg_6","title":"title6","source":null,"warehousedTime":null,"allowcomments":null,"categoryId":"1","categoryName":"一级栏目1","articelFrom":"","publishTime":"2018-04-20 19:17:34","thumbnail":null,"templateId":"1","original":"1","h5URL":null,"postNum":null},{"id":"lzg_5","title":"title5","source":null,"warehousedTime":null,"allowcomments":null,"categoryId":"1","categoryName":"一级栏目1","articelFrom":"","publishTime":"2018-04-19 19:17:34","thumbnail":null,"templateId":"1","original":"1","h5URL":null,"postNum":null},{"id":"lzg_4","title":"title4","source":null,"warehousedTime":null,"allowcomments":null,"categoryId":"1","categoryName":"一级栏目1","articelFrom":"","publishTime":"2018-04-18 19:17:34","thumbnail":null,"templateId":"1","original":"1","h5URL":null,"postNum":null},{"id":"lzg_3","title":"title3","source":null,"warehousedTime":null,"allowcomments":null,"categoryId":"1","categoryName":"一级栏目1","articelFrom":"","publishTime":"2018-04-17 19:17:34","thumbnail":null,"templateId":"0","original":"1","h5URL":null,"postNum":null},{"id":"lzg_2","title":"title2","source":null,"warehousedTime":null,"allowcomments":null,"categoryId":"1","categoryName":"一级栏目1","articelFrom":"","publishTime":"2018-04-16 19:17:34","thumbnail":null,"templateId":"0","original":"1","h5URL":null,"postNum":null},{"id":"lzg_1","title":"title1","source":null,"warehousedTime":null,"allowcomments":null,"categoryId":"1","categoryName":"一级栏目1","articelFrom":"","publishTime":"2018-04-15 19:17:34","thumbnail":null,"templateId":"0","original":"1","h5URL":null,"postNum":null}]
+     * rows : [{"id":"lzg_10","title":"title10","source":null,"warehousedTime":null,"allowcomments":"1","categoryId":"1","categoryName":"一级栏目1","articelFrom":"","publishTime":"2018-04-24 19:17:34","thumbnail":null,"templateId":"3","original":"1","h5URL":"testurl10","postNum":"100"},{"id":"lzg_9","title":"title9","source":null,"warehousedTime":null,"allowcomments":"1","categoryId":"1","categoryName":"一级栏目1","articelFrom":"","publishTime":"2018-04-23 19:17:34","thumbnail":null,"templateId":"3","original":"1","h5URL":"testurl9","postNum":"999"},{"id":"lzg_8","title":"title8","source":null,"warehousedTime":null,"allowcomments":"1","categoryId":"1","categoryName":"一级栏目1","articelFrom":"","publishTime":"2018-04-22 19:17:34","thumbnail":null,"templateId":"2","original":"1","h5URL":"testurl8","postNum":"888"},{"id":"lzg_7","title":"title7","source":null,"warehousedTime":null,"allowcomments":"1","categoryId":"1","categoryName":"一级栏目1","articelFrom":"","publishTime":"2018-04-21 19:17:34","thumbnail":null,"templateId":"2","original":"1","h5URL":"testurl7","postNum":"777"},{"id":"lzg_6","title":"title6","source":null,"warehousedTime":null,"allowcomments":"1","categoryId":"1","categoryName":"一级栏目1","articelFrom":"","publishTime":"2018-04-20 19:17:34","thumbnail":null,"templateId":"1","original":"1","h5URL":"testurl6","postNum":"666"},{"id":"lzg_5","title":"title5","source":null,"warehousedTime":null,"allowcomments":"1","categoryId":"1","categoryName":"一级栏目1","articelFrom":"","publishTime":"2018-04-19 19:17:34","thumbnail":null,"templateId":"1","original":"1","h5URL":"testurl5","postNum":"555"},{"id":"lzg_4","title":"title4","source":null,"warehousedTime":null,"allowcomments":"1","categoryId":"1","categoryName":"一级栏目1","articelFrom":"","publishTime":"2018-04-18 19:17:34","thumbnail":null,"templateId":"1","original":"1","h5URL":"testurl4","postNum":"444"},{"id":"lzg_3","title":"title3","source":null,"warehousedTime":null,"allowcomments":"1","categoryId":"1","categoryName":"一级栏目1","articelFrom":"","publishTime":"2018-04-17 19:17:34","thumbnail":null,"templateId":"0","original":"1","h5URL":"http://192.168.0.37:8086/zcm/zcm/nrfb/app/","postNum":"333"},{"id":"lzg_2","title":"title2","source":null,"warehousedTime":null,"allowcomments":"1","categoryId":"1","categoryName":"一级栏目1","articelFrom":"","publishTime":"2018-04-16 19:17:34","thumbnail":null,"templateId":"0","original":"1","h5URL":"http://192.168.0.37:8086/zcm/zcm/nrfb/app/","postNum":"222"},{"id":"lzg_1","title":"title1","source":null,"warehousedTime":null,"allowcomments":"1","categoryId":"1","categoryName":"一级栏目1","articelFrom":"","publishTime":"2018-04-15 19:17:34","thumbnail":null,"templateId":"0","original":"1","h5URL":"http://192.168.0.37:8086/zcm/zcm/nrfb/app/","postNum":"222"}]
      * records : []
-     * sqlinfo : {"sql":" SELECT A.TITLE_,'' ARTICLEFROM_,TO_CHAR(B.PUBLISH_TIME_,'YYYY-MM-DD HH24:MI:SS') PUBLISH_TIME_,'' PIC,C.TEMPLATE_ID_,A.ID_,D.ID_ CATEGORY_ID_,D.NAME_,A.SOURCE_ FROM PRODUCT_ARTICLE A,PRODUCT_CATEGORY B,PRODUCT_TEMPLATE C,APP_CATEGORY D WHERE A.ID_ = B.ARTICLE_ID_ AND B.ID_ = C.ARTICLE_CATEGORY_ID_ AND B.CATEGORY_ID_ = D.ID_ AND D.ID_ = ? AND B.PUBLISH_TIME_ <= TO_DATE(?,'YYYY-MM-DD HH24:MI:SS') ","sqlPaged":"SELECT * FROM( SELECT ROWNUM ROWNUM_, A.* FROM ( SELECT A.TITLE_,'' ARTICLEFROM_,TO_CHAR(B.PUBLISH_TIME_,'YYYY-MM-DD HH24:MI:SS') PUBLISH_TIME_,'' PIC,C.TEMPLATE_ID_,A.ID_,D.ID_ CATEGORY_ID_,D.NAME_,A.SOURCE_ FROM PRODUCT_ARTICLE A,PRODUCT_CATEGORY B,PRODUCT_TEMPLATE C,APP_CATEGORY D WHERE A.ID_ = B.ARTICLE_ID_ AND B.ID_ = C.ARTICLE_CATEGORY_ID_ AND B.CATEGORY_ID_ = D.ID_ AND D.ID_ = ? AND B.PUBLISH_TIME_ <= TO_DATE(?,'YYYY-MM-DD HH24:MI:SS') ) A WHERE ROWNUM <= 10 ) WHERE ROWNUM_ >= 1 ","args":["1","2018-04-25 19:17:34"],"page":1,"pageRows":10,"totalPage":1,"begin":1,"end":10}
+     * sqlinfo : {"sql":" SELECT A.TITLE_,'' ARTICLEFROM_,TO_CHAR(B.PUBLISH_TIME_,'YYYY-MM-DD HH24:MI:SS') PUBLISH_TIME_,'' PIC,C.TEMPLATE_ID_,A.ID_,D.ID_ CATEGORY_ID_,D.NAME_,A.SOURCE_,B.ARTICLE_URL_,B.POST_NUM_,A.ALLOWCOMMENTS_ FROM PRODUCT_ARTICLE A,PRODUCT_CATEGORY B,PRODUCT_TEMPLATE C,APP_CATEGORY D WHERE A.ID_ = B.ARTICLE_ID_ AND B.ID_ = C.ARTICLE_CATEGORY_ID_ AND B.CATEGORY_ID_ = D.ID_ AND D.ID_ = ? AND B.PUBLISH_TIME_ <= TO_DATE(?,'YYYY-MM-DD HH24:MI:SS') ","sqlPaged":"SELECT * FROM( SELECT ROWNUM ROWNUM_, A.* FROM ( SELECT A.TITLE_,'' ARTICLEFROM_,TO_CHAR(B.PUBLISH_TIME_,'YYYY-MM-DD HH24:MI:SS') PUBLISH_TIME_,'' PIC,C.TEMPLATE_ID_,A.ID_,D.ID_ CATEGORY_ID_,D.NAME_,A.SOURCE_,B.ARTICLE_URL_,B.POST_NUM_,A.ALLOWCOMMENTS_ FROM PRODUCT_ARTICLE A,PRODUCT_CATEGORY B,PRODUCT_TEMPLATE C,APP_CATEGORY D WHERE A.ID_ = B.ARTICLE_ID_ AND B.ID_ = C.ARTICLE_CATEGORY_ID_ AND B.CATEGORY_ID_ = D.ID_ AND D.ID_ = ? AND B.PUBLISH_TIME_ <= TO_DATE(?,'YYYY-MM-DD HH24:MI:SS') ) A WHERE ROWNUM <= 10 ) WHERE ROWNUM_ >= 1 ","args":["1","2018-04-25 19:17:34"],"page":1,"pageRows":10,"totalPage":1,"begin":1,"end":10}
      */
 
     private boolean success;
@@ -94,8 +95,8 @@ public class LanMuYiBean {
 
     public static class SqlinfoBean {
         /**
-         * sql :  SELECT A.TITLE_,'' ARTICLEFROM_,TO_CHAR(B.PUBLISH_TIME_,'YYYY-MM-DD HH24:MI:SS') PUBLISH_TIME_,'' PIC,C.TEMPLATE_ID_,A.ID_,D.ID_ CATEGORY_ID_,D.NAME_,A.SOURCE_ FROM PRODUCT_ARTICLE A,PRODUCT_CATEGORY B,PRODUCT_TEMPLATE C,APP_CATEGORY D WHERE A.ID_ = B.ARTICLE_ID_ AND B.ID_ = C.ARTICLE_CATEGORY_ID_ AND B.CATEGORY_ID_ = D.ID_ AND D.ID_ = ? AND B.PUBLISH_TIME_ <= TO_DATE(?,'YYYY-MM-DD HH24:MI:SS')
-         * sqlPaged : SELECT * FROM( SELECT ROWNUM ROWNUM_, A.* FROM ( SELECT A.TITLE_,'' ARTICLEFROM_,TO_CHAR(B.PUBLISH_TIME_,'YYYY-MM-DD HH24:MI:SS') PUBLISH_TIME_,'' PIC,C.TEMPLATE_ID_,A.ID_,D.ID_ CATEGORY_ID_,D.NAME_,A.SOURCE_ FROM PRODUCT_ARTICLE A,PRODUCT_CATEGORY B,PRODUCT_TEMPLATE C,APP_CATEGORY D WHERE A.ID_ = B.ARTICLE_ID_ AND B.ID_ = C.ARTICLE_CATEGORY_ID_ AND B.CATEGORY_ID_ = D.ID_ AND D.ID_ = ? AND B.PUBLISH_TIME_ <= TO_DATE(?,'YYYY-MM-DD HH24:MI:SS') ) A WHERE ROWNUM <= 10 ) WHERE ROWNUM_ >= 1
+         * sql :  SELECT A.TITLE_,'' ARTICLEFROM_,TO_CHAR(B.PUBLISH_TIME_,'YYYY-MM-DD HH24:MI:SS') PUBLISH_TIME_,'' PIC,C.TEMPLATE_ID_,A.ID_,D.ID_ CATEGORY_ID_,D.NAME_,A.SOURCE_,B.ARTICLE_URL_,B.POST_NUM_,A.ALLOWCOMMENTS_ FROM PRODUCT_ARTICLE A,PRODUCT_CATEGORY B,PRODUCT_TEMPLATE C,APP_CATEGORY D WHERE A.ID_ = B.ARTICLE_ID_ AND B.ID_ = C.ARTICLE_CATEGORY_ID_ AND B.CATEGORY_ID_ = D.ID_ AND D.ID_ = ? AND B.PUBLISH_TIME_ <= TO_DATE(?,'YYYY-MM-DD HH24:MI:SS')
+         * sqlPaged : SELECT * FROM( SELECT ROWNUM ROWNUM_, A.* FROM ( SELECT A.TITLE_,'' ARTICLEFROM_,TO_CHAR(B.PUBLISH_TIME_,'YYYY-MM-DD HH24:MI:SS') PUBLISH_TIME_,'' PIC,C.TEMPLATE_ID_,A.ID_,D.ID_ CATEGORY_ID_,D.NAME_,A.SOURCE_,B.ARTICLE_URL_,B.POST_NUM_,A.ALLOWCOMMENTS_ FROM PRODUCT_ARTICLE A,PRODUCT_CATEGORY B,PRODUCT_TEMPLATE C,APP_CATEGORY D WHERE A.ID_ = B.ARTICLE_ID_ AND B.ID_ = C.ARTICLE_CATEGORY_ID_ AND B.CATEGORY_ID_ = D.ID_ AND D.ID_ = ? AND B.PUBLISH_TIME_ <= TO_DATE(?,'YYYY-MM-DD HH24:MI:SS') ) A WHERE ROWNUM <= 10 ) WHERE ROWNUM_ >= 1
          * args : ["1","2018-04-25 19:17:34"]
          * page : 1
          * pageRows : 10
@@ -184,7 +185,7 @@ public class LanMuYiBean {
          * title : title10
          * source : null
          * warehousedTime : null
-         * allowcomments : null
+         * allowcomments : 1
          * categoryId : 1
          * categoryName : 一级栏目1
          * articelFrom :
@@ -192,15 +193,15 @@ public class LanMuYiBean {
          * thumbnail : null
          * templateId : 3
          * original : 1
-         * h5URL : null
-         * postNum : null
+         * h5URL : testurl10
+         * postNum : 100
          */
 
         private String id;
         private String title;
         private Object source;
         private Object warehousedTime;
-        private Object allowcomments;
+        private String allowcomments;
         private String categoryId;
         private String categoryName;
         private String articelFrom;
@@ -208,8 +209,8 @@ public class LanMuYiBean {
         private Object thumbnail;
         private String templateId;
         private String original;
-        private Object h5URL;
-        private Object postNum;
+        private String h5URL;
+        private String postNum;
 
         public String getId() {
             return id;
@@ -243,11 +244,11 @@ public class LanMuYiBean {
             this.warehousedTime = warehousedTime;
         }
 
-        public Object getAllowcomments() {
+        public String getAllowcomments() {
             return allowcomments;
         }
 
-        public void setAllowcomments(Object allowcomments) {
+        public void setAllowcomments(String allowcomments) {
             this.allowcomments = allowcomments;
         }
 
@@ -307,19 +308,19 @@ public class LanMuYiBean {
             this.original = original;
         }
 
-        public Object getH5URL() {
+        public String getH5URL() {
             return h5URL;
         }
 
-        public void setH5URL(Object h5URL) {
+        public void setH5URL(String h5URL) {
             this.h5URL = h5URL;
         }
 
-        public Object getPostNum() {
+        public String getPostNum() {
             return postNum;
         }
 
-        public void setPostNum(Object postNum) {
+        public void setPostNum(String postNum) {
             this.postNum = postNum;
         }
     }
