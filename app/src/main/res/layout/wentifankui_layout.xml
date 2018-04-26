@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     >
 <include layout="@layout/top_title"/>
 
     <LinearLayout
         android:id="@+id/fankui_li1"
         android:layout_below="@+id/ti"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="141dp"
         android:orientation="vertical"
         android:background="@drawable/wentibg"
@@ -22,6 +21,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/fankuixiugai"/>
         <ImageView
+            android:layout_marginTop="21dp"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:src="@drawable/xiangban"
@@ -52,11 +52,11 @@
     </LinearLayout>
     <ListView
         android:layout_below="@id/fankui_li2"
-        android:paddingTop="5dp"
         android:divider="@null"
         android:id="@+id/listview_wenti"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
     </ListView>
     <LinearLayout
@@ -72,4 +72,4 @@
             android:focusable="false"
             android:hint="期待您的意见反馈..."/>
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>

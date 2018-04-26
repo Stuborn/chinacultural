@@ -6,8 +6,425 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/top_title"/>
-    <include layout="@layout/my_activity"
-        />
+
+    <LinearLayout
+        android:background="@drawable/wodebg"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:gravity="center"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="right|center_vertical"
+            >
+            <ImageView
+                android:layout_marginTop="15dp"
+
+                android:id="@+id/iv_add"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:layout_marginRight="19dp"
+                android:background="@drawable/shezhi"
+                />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/wode_touxiang"
+            android:layout_width="73dp"
+            android:layout_height="73dp"
+            android:src="@drawable/morentouxiang"/>
+
+        <Button
+            android:layout_marginBottom="38dp"
+            android:id="@+id/login_btn"
+            android:layout_width="71dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="16dp"
+            android:background="#FF5151"
+            android:textColor="@color/write"
+            android:text="立即登陆" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#ffffff"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="2dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25"
+                android:textColor="@color/colorGray"
+                android:textSize="20sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="订阅"
+                android:textColor="@color/colorLowGray"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+        <View
+            android:layout_width="1dp"
+            android:background="#B2B2B2"
+
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            />
+        <LinearLayout
+            android:layout_marginBottom="2dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="34"
+                android:textColor="@color/colorGray"
+                android:textSize="20sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="积分"
+                android:textColor="@color/colorLowGray"
+                android:textSize="12sp"/>
+        </LinearLayout>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#B2B2B2"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            />
+        <LinearLayout
+            android:layout_marginBottom="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="29"
+                android:textColor="@color/colorGray"
+                android:textSize="20sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收藏"
+                android:textColor="@color/colorLowGray"
+                android:textSize="12sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/rl_phone_list"
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <ImageView
+                android:id="@+id/iv_mail_list"
+                android:layout_width="16dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="13dp"
+                android:gravity="center_vertical"
+                android:scaleType="fitCenter"
+                android:src="@drawable/chuanguzo" />
+
+            <TextView
+                android:id="@+id/tv_mail_list"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="12dp"
+                android:layout_toRightOf="@id/iv_mail_list"
+                android:gravity="center_vertical"
+                android:text="我的创作"
+                android:textColor="#333333"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/gengduo_icon" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dip"
+                android:layout_alignLeft="@id/tv_mail_list"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dip"
+                android:background="#ececec" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rl_phone_list2"
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <ImageView
+                android:id="@+id/iv_mail_list2"
+                android:layout_width="16dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="13dp"
+                android:gravity="center_vertical"
+                android:scaleType="fitCenter"
+                android:src="@drawable/shoucang" />
+
+            <TextView
+                android:id="@+id/tv_mail_list2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="12dp"
+                android:layout_toRightOf="@id/iv_mail_list2"
+                android:gravity="center_vertical"
+                android:text="我的收藏"
+                android:textColor="#333333"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/gengduo_icon" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dip"
+                android:layout_alignLeft="@id/tv_mail_list2"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dip"
+                android:background="#ececec" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rl_phone_list3"
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <ImageView
+                android:id="@+id/iv_mail_list3"
+                android:layout_width="16dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="13dp"
+                android:gravity="center_vertical"
+                android:scaleType="fitCenter"
+                android:src="@drawable/dingyue" />
+
+            <TextView
+                android:id="@+id/tv_mail_list3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="12dp"
+                android:layout_toRightOf="@id/iv_mail_list3"
+                android:gravity="center_vertical"
+                android:text="我的订阅"
+                android:textColor="#333333"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/gengduo_icon" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dip"
+                android:layout_alignLeft="@id/tv_mail_list3"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dip"
+                android:background="#ececec" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rl_phone_list4"
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <ImageView
+                android:id="@+id/iv_mail_list4"
+                android:layout_width="16dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="13dp"
+                android:gravity="center_vertical"
+                android:scaleType="fitCenter"
+                android:src="@drawable/wodejifen" />
+
+            <TextView
+                android:id="@+id/tv_mail_list4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="12dp"
+                android:layout_toRightOf="@id/iv_mail_list4"
+                android:gravity="center_vertical"
+                android:text="我的积分"
+                android:textColor="#333333"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/gengduo_icon" />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/rl_phone_list5"
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <ImageView
+                android:id="@+id/iv_mail_list5"
+                android:layout_width="16dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="13dp"
+                android:gravity="center_vertical"
+                android:scaleType="fitCenter"
+                android:src="@drawable/wentifankui" />
+
+            <TextView
+                android:id="@+id/tv_mail_list5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="12dp"
+                android:layout_toRightOf="@id/iv_mail_list5"
+                android:gravity="center_vertical"
+                android:text="问题反馈"
+                android:textColor="#333333"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/gengduo_icon" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dip"
+                android:layout_alignLeft="@id/tv_mail_list5"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dip"
+                android:background="#ececec" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_phone_list6"
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <ImageView
+                android:id="@+id/iv_mail_list6"
+                android:layout_width="16dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="13dp"
+                android:gravity="center_vertical"
+                android:scaleType="fitCenter"
+                android:src="@drawable/guanyuwomen" />
+
+            <TextView
+                android:id="@+id/tv_mail_list6"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="12dp"
+                android:layout_toRightOf="@id/iv_mail_list6"
+                android:gravity="center_vertical"
+                android:text="关于我们"
+                android:textColor="#333333"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/gengduo_icon" />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
 </LinearLayout>
 

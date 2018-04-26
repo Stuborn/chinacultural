@@ -2,6 +2,7 @@ package cn.dhc.chinacultural.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -52,6 +53,12 @@ public class wenziActivity extends AppCompatActivity {
         });
         title_back = (TextView) findViewById(R.id.title_back);
         title_back.setText("正文字号");
+        title_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         tv_center = (TextView) findViewById(R.id.tv_center);
 
         iv_add = (ImageView) findViewById(R.id.iv_add);

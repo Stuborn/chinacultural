@@ -15,7 +15,6 @@ import cn.dhc.chinacultural.R;
 public class genrenziliaoActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-
     LinearLayout shejiao, touxiang, yonghu, shengri, shouji;
     ImageView back;
     private TextView title_back;
@@ -41,7 +40,6 @@ public class genrenziliaoActivity extends AppCompatActivity implements View.OnCl
         shouji.setOnClickListener(this);
 
 
-
     }
 
 
@@ -64,6 +62,8 @@ public class genrenziliaoActivity extends AppCompatActivity implements View.OnCl
                 Intent intent = new Intent();
                 intent.setClass(genrenziliaoActivity.this, shejiaobdActivity.class);
                 genrenziliaoActivity.this.startActivity(intent);
+                break;
+            case R.id.title_back:
                 finish();
                 break;
             default:
@@ -86,6 +86,7 @@ public class genrenziliaoActivity extends AppCompatActivity implements View.OnCl
     private void initView() {
         title_back = (TextView) findViewById(R.id.title_back);
         title_back.setText("栏目");
+        title_back.setOnClickListener(this);
         tv_center = (TextView) findViewById(R.id.tv_center);
         iv_add = (ImageView) findViewById(R.id.iv_add);
         iv_add.setVisibility(View.GONE);

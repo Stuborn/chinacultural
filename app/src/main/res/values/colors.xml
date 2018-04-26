@@ -5,6 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorGray">#333333</color>
+    <color name="colorLowGray">#666666</color>
     <color name="write">#FFf</color>
     <color name="hui">#F6F6F6</color>
 </resources>

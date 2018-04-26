@@ -40,6 +40,8 @@
         <!--<item name="actionMenuTextColor">#333</item>-->
     <!--</style>-->
 
+
+    <style name="AppTheme.Main" parent="AppTheme" />
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">true</item>
         <item name="windowNoTitle">true</item>

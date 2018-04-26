@@ -42,7 +42,9 @@ public class wentibianjiActivity extends AppCompatActivity implements View.OnCli
             case R.id.tijiao:
                 Toast.makeText(getApplicationContext(), "提交按钮", Toast.LENGTH_SHORT);
                 break;
-
+            case R.id.title_back:
+                finish();
+                break;
             default:
                 break;
         }
@@ -51,6 +53,7 @@ public class wentibianjiActivity extends AppCompatActivity implements View.OnCli
     private void initView() {
         title_back = (TextView) findViewById(R.id.title_back);
         title_back.setText("问题反馈");
+        title_back.setOnClickListener(this);
         tv_center = (TextView) findViewById(R.id.tv_center);
         iv_add = (ImageView) findViewById(R.id.iv_add);
     }

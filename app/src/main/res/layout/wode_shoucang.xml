@@ -6,10 +6,11 @@
     android:layout_height="match_parent">
    <include layout="@layout/top_title"/>
     <LinearLayout
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
-            android:layout_width="250dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="100dp"
             android:orientation="vertical">
             <TextView
@@ -28,10 +29,10 @@
                     android:layout_marginBottom="15dp"
                     android:layout_marginLeft="13dp"
                     android:id="@+id/shoucang_chuchu"
-                    android:layout_width="35dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="18dp"
                     android:textSize="15dp"
-                    android:text="人民网"/>
+                    android:text="新华网"/>
                 <TextView
                     android:layout_marginTop="17dp"
                     android:layout_marginBottom="15dp"
@@ -44,10 +45,11 @@
             </LinearLayout>
         </LinearLayout>
         <ImageView
+            android:layout_marginRight="13dp"
             android:layout_marginTop="13dp"
             android:layout_width="107dp"
             android:layout_height="70dp"
-            android:src="@drawable/xinwen1"/>
+            android:src="@drawable/dahuitang"/>
     </LinearLayout>
     <View
         android:layout_width="match_parent"
@@ -56,10 +58,11 @@
         android:layout_marginLeft="13dp"
         />
     <LinearLayout
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
-            android:layout_width="250dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="100dp"
             android:orientation="vertical">
             <TextView
@@ -67,7 +70,7 @@
                 android:layout_marginLeft="13dp"
                 android:layout_width="207dp"
                 android:layout_height="wrap_content"
-                android:text="十三届全国人大一次会议举行第四次全体会议"
+                android:text="全国人大会议表决通过8个专门委员会组成人员名单"
                 android:textStyle="bold"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -76,7 +79,7 @@
                     android:layout_marginTop="17dp"
                     android:layout_marginBottom="15dp"
                     android:layout_marginLeft="13dp"
-                    android:layout_width="35dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="18dp"
                     android:textSize="15dp"
                     android:text="人民网"/>
@@ -91,10 +94,11 @@
             </LinearLayout>
         </LinearLayout>
         <ImageView
+            android:layout_marginRight="13dp"
             android:layout_marginTop="13dp"
             android:layout_width="107dp"
             android:layout_height="70dp"
-            android:src="@drawable/xinwen1"/>
+            android:src="@drawable/rentou"/>
     </LinearLayout>
     <View
         android:layout_width="match_parent"
@@ -103,7 +107,7 @@
         android:layout_marginLeft="13dp"
         />
     <LinearLayout
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="280dp"
         android:orientation="vertical">
             <TextView
@@ -111,13 +115,17 @@
                 android:layout_marginLeft="13dp"
                 android:layout_width="360dp"
                 android:layout_height="wrap_content"
-                android:text="十三届全国人大一次会议举行第四次全体会议"
+                android:text="国务院机构改革方案来了 这些新部门将亮相！"
                 android:textStyle="bold"/>
+
         <ImageView
             android:layout_marginTop="13dp"
-            android:layout_width="333dp"
+            android:layout_width="match_parent"
             android:layout_height="185dp"
-            android:src="@drawable/xinwen1"/>
+            android:src="@drawable/fendouxinshidai"
+            android:scaleType="fitXY"
+            android:layout_marginRight="14dp"
+            android:layout_marginLeft="14dp"/>
         <LinearLayout
             android:layout_width="360dp"
             android:layout_height="50dp">
@@ -125,10 +133,10 @@
                     android:layout_marginTop="17dp"
                     android:layout_marginBottom="15dp"
                     android:layout_marginLeft="13dp"
-                    android:layout_width="35dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="18dp"
                     android:textSize="15dp"
-                    android:text="人民网"/>
+                    android:text="中国新闻网"/>
                 <TextView
                     android:layout_marginTop="17dp"
                     android:layout_marginBottom="15dp"

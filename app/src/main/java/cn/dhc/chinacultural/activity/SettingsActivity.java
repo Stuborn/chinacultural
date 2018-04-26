@@ -72,7 +72,7 @@ public class SettingsActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(SettingsActivity.this, wenziActivity.class);
                 SettingsActivity.this.startActivity(intent);
-                finish();
+                
             }
         });
     }
@@ -80,6 +80,12 @@ public class SettingsActivity extends AppCompatActivity {
     private void initView() {
         title_back = (TextView) findViewById(R.id.title_back);
         title_back.setText("设置");
+        title_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         tv_center = (TextView) findViewById(R.id.tv_center);
         iv_add = (ImageView) findViewById(R.id.iv_add);
         iv_add.setVisibility(View.GONE);

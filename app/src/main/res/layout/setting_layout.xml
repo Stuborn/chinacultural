@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#E0E0E0"
     android:orientation="vertical">
     <!--<LinearLayout-->
         <!--android:id="@+id/ti"-->
@@ -35,7 +34,7 @@
 
     <LinearLayout
         android:id="@+id/li1"
-        android:layout_width="364dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginTop="25dp"
         android:background="#ffffff"
@@ -50,23 +49,23 @@
             android:textSize="16dp" />
 
         <TextView
+            android:layout_marginRight="13dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
-            android:paddingRight="20dp"
             android:text="100M"
             android:textSize="16dp" />
     </LinearLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="13dp"
         android:layout_marginRight="5dp"/>
 
     <LinearLayout
 
         android:id="@+id/li2"
-        android:layout_width="364dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
 
         android:background="#ffffff"
@@ -86,19 +85,20 @@
             android:layout_height="20dp"
             android:gravity="right"
             android:paddingLeft="140dp"
+            android:layout_marginRight="13dp"
             android:src="@drawable/guan"
             android:textSize="16dp" />
     </LinearLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="13dp"
         android:layout_marginRight="5dp"/>
 
     <LinearLayout
 
         android:id="@+id/li3"
-        android:layout_width="364dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="#ffffff"
         android:gravity="center_vertical"
@@ -124,7 +124,7 @@
                 android:textSize="16dp" />
             <ImageView
                 android:gravity="right"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="13dp"
                 android:layout_width="10dp"
                 android:layout_height="wrap_content"
                 android:src="@drawable/gengduo_icon"/>

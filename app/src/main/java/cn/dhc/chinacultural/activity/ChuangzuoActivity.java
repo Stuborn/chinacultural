@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
@@ -44,6 +45,14 @@ public class ChuangzuoActivity extends AppCompatActivity implements View.OnClick
     private TextView title_back;
     private TextView tv_center;
     private ImageView iv_add;
+    private RelativeLayout top_title;
+    private TextView textView3;
+    private TextView textView4;
+    private LinearLayout ll_1;
+    private ListView listview_my;
+    private TextView textView8;
+    private LinearLayout pinglun_li;
+    private LinearLayout ll_plk;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +62,7 @@ public class ChuangzuoActivity extends AppCompatActivity implements View.OnClick
 
         huida = this.findViewById(R.id.huida);
         pinglun = this.findViewById(R.id.pinglun);
+        huida.setTextColor(Color.RED);
 
         txt1 = findViewById(R.id.textView3);
         txt2 = findViewById(R.id.textView4);
@@ -76,6 +86,13 @@ public class ChuangzuoActivity extends AppCompatActivity implements View.OnClick
 
         switch (v.getId()) {
             case R.id.huida:
+                ll_1.setVisibility(View.VISIBLE);
+
+                listview_my.setVisibility(View.VISIBLE);
+
+                pinglun_li.setVisibility(View.VISIBLE);
+
+                ll_plk.setVisibility(View.GONE);
                 huida.setTextColor(Color.RED);
                 pinglun.setTextColor(Color.BLACK);
                 txt3.setText("没有更多内容");
@@ -91,7 +108,15 @@ public class ChuangzuoActivity extends AppCompatActivity implements View.OnClick
                 txt2.setText("");
                 mylistview.setAdapter(null);
                 if (txt1.getText().toString() == null || txt1.getText().toString() == "") {
-                    li.setBackgroundResource(R.drawable.pinlunkong);
+
+
+                    ll_1.setVisibility(View.GONE);
+
+                    listview_my.setVisibility(View.GONE);
+
+                    pinglun_li.setVisibility(View.GONE);
+
+                    ll_plk.setVisibility(View.VISIBLE);
                     txt3.setText("");
                 }
 
@@ -127,7 +152,29 @@ public class ChuangzuoActivity extends AppCompatActivity implements View.OnClick
     private void initView() {
         title_back = (TextView) findViewById(R.id.title_back);
         title_back.setText("我的创作");
+        title_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         tv_center = (TextView) findViewById(R.id.tv_center);
         iv_add = (ImageView) findViewById(R.id.iv_add);
+        top_title = (RelativeLayout) findViewById(R.id.top_title);
+        top_title.setOnClickListener(this);
+        textView3 = (TextView) findViewById(R.id.textView3);
+        textView3.setOnClickListener(this);
+        textView4 = (TextView) findViewById(R.id.textView4);
+        textView4.setOnClickListener(this);
+        ll_1 = (LinearLayout) findViewById(R.id.ll_1);
+        ll_1.setOnClickListener(this);
+        listview_my = (ListView) findViewById(R.id.listview_my);
+
+        textView8 = (TextView) findViewById(R.id.textView8);
+        textView8.setOnClickListener(this);
+        pinglun_li = (LinearLayout) findViewById(R.id.pinglun_li);
+        pinglun_li.setOnClickListener(this);
+        ll_plk = (LinearLayout) findViewById(R.id.ll_plk);
+        ll_plk.setOnClickListener(this);
     }
 }

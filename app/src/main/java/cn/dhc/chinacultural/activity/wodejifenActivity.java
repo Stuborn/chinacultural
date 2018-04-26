@@ -27,13 +27,16 @@ public class wodejifenActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-
+            case R.id.title_back:
+                finish();
+                break;
         }
     }
 
     private void initView() {
         title_back = (TextView) findViewById(R.id.title_back);
         title_back.setText("我的积分");
+        title_back.setOnClickListener(this);
         tv_center = (TextView) findViewById(R.id.tv_center);
         iv_add = (ImageView) findViewById(R.id.iv_add);
     }

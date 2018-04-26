@@ -21,12 +21,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="#ffffff">
+
         <TextView
             android:layout_width="300dp"
             android:layout_height="48dp"
-            android:textStyle="bold"
             android:gravity="center_vertical"
-            android:text="超大"/>
+            android:text="超大"
+            android:textStyle="bold" />
         <View
             android:layout_width="match_parent"
             android:background="#E0E0E0"

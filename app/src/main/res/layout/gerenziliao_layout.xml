@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:id="@+id/ziliao_touxiang"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="#ffffff"
         android:layout_marginTop="8dp"
@@ -28,6 +28,8 @@
                 android:layout_height="32dp"
                 android:src="@drawable/touxiang"/>
             <ImageView
+                android:layout_marginRight="13dp"
+
                 android:layout_marginLeft="7dp"
                 android:layout_width="9dp"
                 android:layout_height="16dp"
@@ -43,7 +45,7 @@
         />
     <LinearLayout
         android:id="@+id/ziliao_yonghu"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="#ffffff"
         android:gravity="center_vertical">
@@ -55,14 +57,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:gravity="right">
+            android:gravity="right|center_vertical">
             <TextView
-                android:layout_marginTop="18dp"
                 android:layout_width="wrap_content"
-                android:layout_height="32dp"
+                android:layout_height="wrap_content"
                 android:text="缘来是你"/>
             <ImageView
-                android:layout_marginTop="18dp"
+                android:layout_marginRight="13dp"
                 android:layout_marginLeft="7dp"
                 android:layout_width="9dp"
                 android:layout_height="16dp"
@@ -78,7 +79,7 @@
         />
     <LinearLayout
         android:id="@+id/ziliao_shengri"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="#ffffff"
         android:gravity="center_vertical">
@@ -90,14 +91,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:gravity="right">
+            android:gravity="right|center_vertical">
             <TextView
-                android:layout_marginTop="18dp"
                 android:layout_width="wrap_content"
-                android:layout_height="32dp"
+                android:layout_height="wrap_content"
                 android:text="1993-06-16"/>
             <ImageView
-                android:layout_marginTop="18dp"
+                android:layout_marginRight="13dp"
                 android:layout_marginLeft="7dp"
                 android:layout_width="9dp"
                 android:layout_height="16dp"
@@ -105,14 +105,11 @@
         </LinearLayout>
 
     </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="7dp"
-        android:background="#ffdedede"
-        />
+
     <LinearLayout
+        android:layout_marginTop="8dp"
         android:id="@+id/ziliao_shouji"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="#ffffff"
         android:gravity="center_vertical">
@@ -124,15 +121,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:gravity="right">
+            android:gravity="right|center_vertical">
             <TextView
-                android:layout_marginTop="18dp"
                 android:layout_width="95dp"
                 android:layout_height="wrap_content"
                 android:text="13569862371"
                 android:textSize="15sp"/>
             <ImageView
-                android:layout_marginTop="18dp"
+                android:layout_marginRight="13dp"
                 android:layout_marginLeft="7dp"
                 android:layout_width="9dp"
                 android:layout_height="16dp"
@@ -148,7 +144,7 @@
         />
     <LinearLayout
         android:id="@+id/ziliao_shejiao"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="#ffffff"
         android:gravity="center_vertical">
@@ -160,15 +156,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:gravity="right">
+            android:gravity="right|center_vertical">
             <TextView
-                android:layout_marginTop="18dp"
-                android:layout_width="75dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="绑定/解绑"
                 android:textSize="15sp"/>
             <ImageView
-                android:layout_marginTop="18dp"
+                android:layout_marginRight="13dp"
                 android:layout_marginLeft="7dp"
                 android:layout_width="9dp"
                 android:layout_height="16dp"

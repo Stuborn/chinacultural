@@ -63,6 +63,9 @@ public class wentiActivity extends AppCompatActivity implements View.OnClickList
                 Intent intent = new Intent();
                 intent.setClass(wentiActivity.this, wentibianjiActivity.class);
                 wentiActivity.this.startActivity(intent);
+
+                break;
+            case R.id.title_back:
                 finish();
                 break;
 
@@ -93,6 +96,7 @@ public class wentiActivity extends AppCompatActivity implements View.OnClickList
     private void initView() {
         title_back = (TextView) findViewById(R.id.title_back);
         title_back.setText("问题反馈");
+        title_back.setOnClickListener(this);
         tv_center = (TextView) findViewById(R.id.tv_center);
         iv_add = (ImageView) findViewById(R.id.iv_add);
     }
