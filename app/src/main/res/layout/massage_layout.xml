@@ -111,7 +111,6 @@
         android:layout_below="@+id/HS"
         android:background="#DEDEDE"
         android:orientation="horizontal"/>
-
     <ListView
         android:id="@+id/massage_lv"
         android:layout_width="match_parent"

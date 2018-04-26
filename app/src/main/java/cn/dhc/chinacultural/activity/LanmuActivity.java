@@ -28,7 +28,7 @@ public class LanmuActivity extends Activity {
     private int img1[]={R.drawable.lanmuredian,R.drawable.lanmuredian,R.drawable.lanmuredian};
     private String txt1[]={"文化北京","文化北京","文化北京"};
 
-    private String txt2[]={"军事","军事","军事","+"};
+    private String txt2[]={"头条","要闻","滚动","直播","艺术家","杂志","文物","报纸","财经","军事","娱乐","两会","体育","图片","健康","美食","旅游","+"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +81,9 @@ public class LanmuActivity extends Activity {
                 btn_lanmu.setVisibility(View.VISIBLE);
 //                iv_del.setVisibility(View.VISIBLE);
                 listview.setVisibility(View.GONE);
+                findViewById(R.id.ll_3).setVisibility(View.GONE);
+                findViewById(R.id.tv_rd).setVisibility(View.GONE);
+                findViewById(R.id.view2).setVisibility(View.GONE);
             }
         });
         btn_lanmu.setOnClickListener(new View.OnClickListener() {
@@ -90,6 +93,9 @@ public class LanmuActivity extends Activity {
                 btn_manager.setVisibility(View.VISIBLE);
 //                iv_del.setVisibility(View.GONE);
                 listview.setVisibility(View.VISIBLE);
+                findViewById(R.id.ll_3).setVisibility(View.VISIBLE);
+                findViewById(R.id.tv_rd).setVisibility(View.VISIBLE);
+                findViewById(R.id.view2).setVisibility(View.VISIBLE);
             }
         });
         mygridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
