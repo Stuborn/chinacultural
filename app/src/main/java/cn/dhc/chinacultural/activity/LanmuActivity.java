@@ -19,6 +19,9 @@ import java.util.Map;
 
 import cn.dhc.chinacultural.R;
 
+/**
+ * 栏目管理页面
+ */
 public class LanmuActivity extends Activity {
 
     private GridView mygridview;

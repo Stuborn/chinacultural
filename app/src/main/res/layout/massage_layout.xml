@@ -80,27 +80,43 @@
 
     </RelativeLayout>
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/HS"
+    <LinearLayout
+        android:id="@+id/ll_tab"
         android:layout_width="match_parent"
         android:layout_height="47dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/relativeLayout2"
-        android:background="#fff"
-        android:fontFamily="@font/noto_sans"
-        android:textSize="17sp"
-        app:tabIndicatorColor="#fff"
-        app:tabMode="scrollable"
-        app:tabSelectedTextColor="#e60012">
-
-
-        <android.support.design.widget.TabItem
-            android:layout_width="79dp"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:background="@color/write"
+        android:layout_below="@+id/relativeLayout2">
+        <android.support.design.widget.TabLayout
+            android:id="@+id/HS"
+            android:layout_width="0dp"
             android:layout_height="47dp"
-            android:icon="@drawable/gengduoicon"
-            android:text=""/>
-    </android.support.design.widget.TabLayout>
+            android:layout_weight="9"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/relativeLayout2"
+            android:background="#fff"
+            android:fontFamily="@font/noto_sans"
+            android:textSize="17sp"
+            app:tabIndicatorColor="#fff"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="#e60012">
+
+
+        </android.support.design.widget.TabLayout>
+
+        <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:src="@drawable/gengduoicon"
+            />
+    </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -108,7 +124,7 @@
         android:layout_height="1dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/HS"
+        android:layout_below="@+id/ll_tab"
         android:background="#DEDEDE"
         android:orientation="horizontal"/>
     <cn.dhc.chinacultural.widget.refresh.RefreshLayout

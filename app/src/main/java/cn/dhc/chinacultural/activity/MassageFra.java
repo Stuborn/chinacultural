@@ -14,9 +14,11 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 import com.zhy.http.okhttp.request.RequestCall;
@@ -32,6 +34,15 @@ import cn.dhc.chinacultural.utils.LogUtils;
 import cn.dhc.chinacultural.utils.ToastUtils;
 import cn.dhc.chinacultural.widget.refresh.RefreshLayout;
 import okhttp3.Call;
+import cn.dhc.chinacultural.bean.ColumnListBean;
+import cn.dhc.chinacultural.bean.HTTPResponseBean;
+import cn.dhc.chinacultural.bean.LoginResultBean;
+import cn.dhc.chinacultural.utils.LogUtils;
+import cn.dhc.chinacultural.utils.ToastUtils;
+import okhttp3.Call;
+
+import static cn.dhc.chinacultural.bean.Constant.URL_GETCOLUMNLIST;
+import static cn.dhc.chinacultural.bean.Constant.URL_LOGIN;
 
 /**
  * 01.资讯Fragment
@@ -65,12 +76,54 @@ public class MassageFra extends Fragment implements SwipeRefreshLayout.OnRefresh
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view= inflater.inflate(R.layout.massage_layout, container, false);
         info(view);
-        selectTab();
 //        setlistview();
         initData();
+		//获得栏目列表
+		getColumnList();
         refresh();
         return view;
     }
+
+	private RequestCall mColumnRequestCall;
+
+	/**
+	 * 获得栏目列表
+	 */
+	private void getColumnList() {
+		mColumnRequestCall = OkHttpUtils
+				.post()
+				.url(URL_GETCOLUMNLIST)
+				.build();
+
+		mColumnRequestCall.execute(new StringCallback() {
+			@Override
+			public void onError(Call call, Exception e, int id) {
+				call.cancel();
+				LogUtils.e("网络请求失败！" + e.toString());
+			}
+
+			@Override
+			public void onResponse(String response, int id) {
+				LogUtils.e("请求栏目列表返回response:" + response);
+				Gson g = new GsonBuilder().serializeNulls().create();
+				HTTPResponseBean mHttpResponseBean = g.fromJson(response, HTTPResponseBean.class);
+				if (mHttpResponseBean.success.equals("true")) {
+					//栏目列表请求成功
+					ColumnListBean.DataBean mDataBean = (ColumnListBean.DataBean) mHttpResponseBean.getPesponseBean(ColumnListBean.DataBean.class);
+					List<ColumnListBean.DataBean.CategorydataBean> mCategroydataBean = mDataBean.getCategorydata();
+					setColumn(mCategroydataBean);
+				}
+			}
+		});
+	}
+
+	private void setColumn(List<ColumnListBean.DataBean.CategorydataBean> mCategroydataBean) {
+		for (int i = 0; i < mCategroydataBean.size(); i++) {
+			//添加tab
+			tabLayout.addTab(tabLayout.newTab().setText(mCategroydataBean.get(i).getNAME_() + ""));
+			selectTab(mCategroydataBean);
+		}
+	}
 
     private void initData() {
         page = 1;
@@ -123,144 +176,128 @@ public class MassageFra extends Fragment implements SwipeRefreshLayout.OnRefresh
         im_find=(ImageView)view.findViewById(R.id.find_img);
         im_more=(ImageView)view.findViewById(R.id.btn_img);
 
-        im_icon.setImageResource(R.drawable.logo);
-        im_find.setImageResource(R.drawable.soushuoicon);
-        im_more.setImageResource(R.drawable.caidanicon);
+		im_icon.setImageResource(R.drawable.logo);
+		im_find.setImageResource(R.drawable.soushuoicon);
+		im_more.setImageResource(R.drawable.caidanicon);
 
-        findet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),SearchActivity.class);
-                startActivity(intent);
-            }
-        });
+		findet.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(getActivity(), SearchActivity.class);
+				startActivity(intent);
+			}
+		});
 
-        massagelv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+		massagelv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-            @Override
-            public void onItemClick(AdapterView<?> adapter, View view, int position,
-                                    long id) {
-                if(s==0){
-                    Intent intent = new Intent(getActivity(),NewsActivity.class);
-                    startActivity(intent);
-                }else if(s==1){
-                    Intent intent = new Intent(getActivity(),ImagesActivity.class);
-                    startActivity(intent);
-                }
+			@Override
+			public void onItemClick(AdapterView<?> adapter, View view, int position,
+									long id) {
+				if (s == 0) {
+					Intent intent = new Intent(getActivity(), NewsActivity.class);
+					startActivity(intent);
+				} else if (s == 1) {
+					Intent intent = new Intent(getActivity(), ImagesActivity.class);
+					startActivity(intent);
+				}
 
-            }
-
-
-        });
+			}
 
 
-    }
+		});
+
+		view.findViewById(R.id.iv_add).setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(getActivity(), LanmuActivity.class);
+				startActivity(intent);
+			}
+		});
+	}
 
 
-    public void selectTab(){
-        //tab的下划线颜色
-        tabLayout.setSelectedTabIndicatorColor(Color.RED);
-        for (int i = 0; i < 20; i++) {
-            //添加tab
-            tabLayout.addTab(tabLayout.newTab().setText("TAB" + i));
-        }
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                if(tab.getText().toString().equals("头条"))
-                {
-                    massagelv.setAdapter(null);
-                    setlistview();
-                    s=0;
-                }else if(tab.getText().toString()=="要闻")
-                {
+	public void selectTab(final List<ColumnListBean.DataBean.CategorydataBean> mCategroydataBean) {
+		//tab的下划线颜色
+		tabLayout.setSelectedTabIndicatorColor(Color.RED);
+		tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+			@Override
+			public void onTabSelected(TabLayout.Tab tab) {
+				ToastUtils.showShort(getActivity().getApplicationContext(), "当前tab名称：" + mCategroydataBean.get(tab.getPosition()).getNAME_() + ";当前tabID：" + mCategroydataBean.get(tab.getPosition()).getID_());
+			}
 
-                }else if(tab.getText().toString()=="滚动")
-                {
+			@Override
+			public void onTabUnselected(TabLayout.Tab tab) {
+			}
 
-                }else if(tab.getText().toString().equals("图集"))
-                {
-                    massagelv.setAdapter(null);
-                    setlistview2();
-                    s=1;
-                }else if(tab.getText().equals(""))
-                {
-                    Intent intent = new Intent(getActivity(),LanmuActivity.class);
-                    startActivity(intent);
-                }
-            }
+			@Override
+			public void onTabReselected(TabLayout.Tab tab) {
+			}
+		});
+	}
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-            }
+	public void setlistview() {
+		SimpleAdapter adepter = new SimpleAdapter(getActivity()
+				, getData(),
+				R.layout.msg_model1_layout,
+				new String[]{"title", "time", "a", "r", "tu"}
+				, new int[]{R.id.tv_title, R.id.tv_a,
+				R.id.tv_time, R.id.iv_r, R.id.iv_p});
+		massagelv.setAdapter(adepter);
+	}
 
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-            }
-        });
-    }
-    public void setlistview(){
-        SimpleAdapter adepter=new SimpleAdapter(getActivity()
-                ,getData(),
-                R.layout.msg_model1_layout,
-                new String[]{"title","time","a","r","tu"}
-                ,new int[]{R.id.tv_title,R.id.tv_a,
-                R.id.tv_time,R.id.iv_r,R.id.iv_p});
-        massagelv.setAdapter(adepter);
-    }
-    public void setlistview2(){
-        SimpleAdapter adepter=new SimpleAdapter(getActivity()
-                ,getData2(),
-                R.layout.img_model_layout,
-                new String[]{"title","time","a","r","tu"}
-                ,new int[]{R.id.tv_title,R.id.tv_a,
-                R.id.tv_time,R.id.iv_r,R.id.iv_p});
-        massagelv.setAdapter(adepter);
-    }
-    public List getData(){
-        String title[]={"#关押25年再审6年# 刘忠林故意杀人案改判无罪！",
-                "#关押25年再审6年# 刘忠林故意杀人案改判无罪！",
-                "#关押25年再审6年# 刘忠林故意杀人案改判无罪！"};
-        String time[]={"TextView","TextView","TextView"};
-        String a[]={"刚刚","刚刚","刚刚"};
-        List list=new ArrayList();
-        int r[]={R.drawable.reicon,R.drawable.reicon,R.drawable.reicon};
-        int tu[]={R.drawable.news,R.drawable.news,R.drawable.news};
+	public void setlistview2() {
+		SimpleAdapter adepter = new SimpleAdapter(getActivity()
+				, getData2(),
+				R.layout.img_model_layout,
+				new String[]{"title", "time", "a", "r", "tu"}
+				, new int[]{R.id.tv_title, R.id.tv_a,
+				R.id.tv_time, R.id.iv_r, R.id.iv_p});
+		massagelv.setAdapter(adepter);
+	}
 
-        for(int i=0;i<time.length;i++)
-        {
-            Map map=new HashMap();
-            map.put("title",title[i]);
-            map.put("time",time[i]);
-            map.put("a",a[i]);
-            map.put("r",r[i]);
-            map.put("tu",tu[i]);
-            list.add(map);
-        }
-        return list;
-    }
-    public List getData2(){
-        String title[]={"#关押25年再审6年# 刘忠林故意杀人案改判无罪！",
-                "#关押25年再审6年# 刘忠林故意杀人案改判无罪！",
-                "#关押25年再审6年# 刘忠林故意杀人案改判无罪！"};
-        String time[]={"TextView","TextView","TextView"};
-        String a[]={"刚刚","刚刚","刚刚"};
-        List list=new ArrayList();
-        int r[]={R.drawable.reicon,R.drawable.reicon,R.drawable.reicon};
-        int tu[]={R.drawable.img2,R.drawable.img2,R.drawable.img2};
+	public List getData() {
+		String title[] = {"#关押25年再审6年# 刘忠林故意杀人案改判无罪！",
+				"#关押25年再审6年# 刘忠林故意杀人案改判无罪！",
+				"#关押25年再审6年# 刘忠林故意杀人案改判无罪！"};
+		String time[] = {"TextView", "TextView", "TextView"};
+		String a[] = {"刚刚", "刚刚", "刚刚"};
+		List list = new ArrayList();
+		int r[] = {R.drawable.reicon, R.drawable.reicon, R.drawable.reicon};
+		int tu[] = {R.drawable.news, R.drawable.news, R.drawable.news};
 
-        for(int i=0;i<time.length;i++)
-        {
-            Map map=new HashMap();
-            map.put("title",title[i]);
-            map.put("time",time[i]);
-            map.put("a",a[i]);
-            map.put("r",r[i]);
-            map.put("tu",tu[i]);
-            list.add(map);
-        }
-        return list;
-    }
+		for (int i = 0; i < time.length; i++) {
+			Map map = new HashMap();
+			map.put("title", title[i]);
+			map.put("time", time[i]);
+			map.put("a", a[i]);
+			map.put("r", r[i]);
+			map.put("tu", tu[i]);
+			list.add(map);
+		}
+		return list;
+	}
+
+	public List getData2() {
+		String title[] = {"#关押25年再审6年# 刘忠林故意杀人案改判无罪！",
+				"#关押25年再审6年# 刘忠林故意杀人案改判无罪！",
+				"#关押25年再审6年# 刘忠林故意杀人案改判无罪！"};
+		String time[] = {"TextView", "TextView", "TextView"};
+		String a[] = {"刚刚", "刚刚", "刚刚"};
+		List list = new ArrayList();
+		int r[] = {R.drawable.reicon, R.drawable.reicon, R.drawable.reicon};
+		int tu[] = {R.drawable.img2, R.drawable.img2, R.drawable.img2};
+
+		for (int i = 0; i < time.length; i++) {
+			Map map = new HashMap();
+			map.put("title", title[i]);
+			map.put("time", time[i]);
+			map.put("a", a[i]);
+			map.put("r", r[i]);
+			map.put("tu", tu[i]);
+			list.add(map);
+		}
+		return list;
+	}
 
     @Override
     public void onRefresh() {
