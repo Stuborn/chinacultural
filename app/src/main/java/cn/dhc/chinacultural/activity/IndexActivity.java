@@ -3,6 +3,7 @@ package cn.dhc.chinacultural.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -11,6 +12,9 @@ import com.google.gson.GsonBuilder;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 import com.zhy.http.okhttp.request.RequestCall;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import cn.dhc.chinacultural.R;
 import cn.dhc.chinacultural.bean.LoginResultBean;
@@ -34,6 +38,10 @@ public class IndexActivity extends BaseAvtivity {
 		setContentView(R.layout.index_layout);
 //		setImmerseLayout(findViewById(R.id.ti));
 		btn_re = (Button) findViewById(R.id.btn_re);
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// HH:mm:ss
+//获取当前时间
+		Date date = new Date(System.currentTimeMillis());
+		Log.e("IndexActivity", "Date获取当前日期时间" + simpleDateFormat.format(date));
 		btn_re.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

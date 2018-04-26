@@ -22,7 +22,7 @@ public class WelcomeActivity extends Activity {
                     @Override
                     public void run() {
                         //跳转至 MainActivity
-                        Intent intent = new Intent(WelcomeActivity.this, IndexActivity.class);
+                        Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
                         startActivity(intent);
                         //结束当前的 Activity
                         WelcomeActivity.this.finish();
