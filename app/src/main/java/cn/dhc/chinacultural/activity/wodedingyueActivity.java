@@ -61,15 +61,15 @@ public class wodedingyueActivity extends AppCompatActivity implements View.OnCli
 
         switch (v.getId()) {
             case R.id.bianji_btn:
-                if (i == 0) {
-                    img.setVisibility(View.GONE);
-                    btn.setText("完成");
-                    i++;
-                } else {
-                    img.setVisibility(View.INVISIBLE);
-                    btn.setText("编辑");
-                    i--;
-                }
+//                if (i == 0) {
+//                    img.setVisibility(View.GONE);
+//                    btn.setText("完成");
+//                    i++;
+//                } else {
+//                    img.setVisibility(View.INVISIBLE);
+//                    btn.setText("编辑");
+//                    i--;
+//                }
                 break;
             case R.id.title_back:
                 finish();
