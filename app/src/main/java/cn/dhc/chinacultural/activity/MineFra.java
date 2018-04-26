@@ -107,7 +107,9 @@ public class MineFra extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.login_btn:
-
+                intent = new Intent();
+                intent.setClass(getContext(), IndexActivity.class);
+                startActivity(intent);
                 break;
             case R.id.rl_phone_list:
                 intent = new Intent();
