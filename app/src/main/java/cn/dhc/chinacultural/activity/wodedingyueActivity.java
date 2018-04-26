@@ -71,6 +71,9 @@ public class wodedingyueActivity extends AppCompatActivity implements View.OnCli
                     i--;
                 }
                 break;
+            case R.id.title_back:
+                finish();
+                break;
 
             default:
                 break;
@@ -80,6 +83,7 @@ public class wodedingyueActivity extends AppCompatActivity implements View.OnCli
     private void initView() {
         title_back = (TextView) findViewById(R.id.title_back);
         title_back.setText("我的订阅");
+        title_back.setOnClickListener(this);
         tv_center = (TextView) findViewById(R.id.tv_center);
         iv_add = (ImageView) findViewById(R.id.iv_add);
     }
