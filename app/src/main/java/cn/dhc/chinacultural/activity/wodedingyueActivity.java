@@ -16,7 +16,7 @@ import java.util.Map;
 
 import cn.dhc.chinacultural.R;
 
-public class wodedingyueActivity extends AppCompatActivity implements View.OnClickListener {
+public class wodedingyueActivity extends BaseAvtivity implements View.OnClickListener {
 
     GridView mygridview;
     ImageView img, back;
@@ -38,7 +38,7 @@ public class wodedingyueActivity extends AppCompatActivity implements View.OnCli
         btn = findViewById(R.id.bianji_btn);
 
 
-        img = findViewById(R.id.img);
+//        img = findViewById(R.id.img);
 
         List list = new ArrayList();
         for (int i = 1; i < biaoqian.length; i++) {

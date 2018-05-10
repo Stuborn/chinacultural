@@ -1,6 +1,7 @@
 package cn.dhc.chinacultural.activity;
 
 import android.app.Fragment;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -29,9 +30,11 @@ import java.util.List;
 import java.util.Map;
 
 import cn.dhc.chinacultural.R;
+import cn.dhc.chinacultural.bean.Constant;
 import cn.dhc.chinacultural.bean.LanMuYiBean;
 import cn.dhc.chinacultural.utils.LogUtils;
 import cn.dhc.chinacultural.utils.ToastUtils;
+import cn.dhc.chinacultural.widget.CCProgressDialog;
 import cn.dhc.chinacultural.widget.refresh.RefreshLayout;
 import okhttp3.Call;
 import cn.dhc.chinacultural.bean.ColumnListBean;
@@ -49,7 +52,7 @@ import static cn.dhc.chinacultural.bean.Constant.URL_LOGIN;
  * Created by WYHY on 2018/4/20.
  */
 
-public class MassageFra extends Fragment implements SwipeRefreshLayout.OnRefreshListener, RefreshLayout.OnLoadListener {
+public class MassageFra extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener, RefreshLayout.OnLoadListener {
     private RequestCall mRequestCall;
     private View view;
     private TextView findet;
@@ -75,8 +78,8 @@ public class MassageFra extends Fragment implements SwipeRefreshLayout.OnRefresh
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view= inflater.inflate(R.layout.massage_layout, container, false);
+        initProgressDialog();
         info(view);
-//        setlistview();
         initData();
 		//获得栏目列表
 		getColumnList();
@@ -90,6 +93,7 @@ public class MassageFra extends Fragment implements SwipeRefreshLayout.OnRefresh
 	 * 获得栏目列表
 	 */
 	private void getColumnList() {
+		ccProgressDialog.show();
 		mColumnRequestCall = OkHttpUtils
 				.post()
 				.url(URL_GETCOLUMNLIST)
@@ -99,11 +103,13 @@ public class MassageFra extends Fragment implements SwipeRefreshLayout.OnRefresh
 			@Override
 			public void onError(Call call, Exception e, int id) {
 				call.cancel();
+				ccProgressDialog.dismiss();
 				LogUtils.e("网络请求失败！" + e.toString());
 			}
 
 			@Override
 			public void onResponse(String response, int id) {
+				ccProgressDialog.dismiss();
 				LogUtils.e("请求栏目列表返回response:" + response);
 				Gson g = new GsonBuilder().serializeNulls().create();
 				HTTPResponseBean mHttpResponseBean = g.fromJson(response, HTTPResponseBean.class);
@@ -129,7 +135,7 @@ public class MassageFra extends Fragment implements SwipeRefreshLayout.OnRefresh
         page = 1;
         mRequestCall = OkHttpUtils
                 .get()
-                .url("http://192.168.0.37:8086/zcm/zcm/nrfb/app/getAppArticleList/1/2018-04-25%2019:17:34/"+page+"/10")
+                .url(Constant.URL_GETARTICLELIST+page+"/10")
                 .build();
 
         mRequestCall.execute(new StringCallback() {
@@ -156,7 +162,6 @@ public class MassageFra extends Fragment implements SwipeRefreshLayout.OnRefresh
         }
 
     private void refresh() {
-
 
         refreshLayout.setColorSchemeResources(R.color.colorPrimary, R.color.colorAccent, R.color.colorAccent, R.color.colorPrimaryDark);
 
@@ -190,11 +195,17 @@ public class MassageFra extends Fragment implements SwipeRefreshLayout.OnRefresh
 
 		massagelv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
+			private LanMuYiBean.RowsBean itemAtPosition;
+
 			@Override
 			public void onItemClick(AdapterView<?> adapter, View view, int position,
 									long id) {
 				if (s == 0) {
-					Intent intent = new Intent(getActivity(), NewsActivity.class);
+					Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
+					itemAtPosition = ((LanMuYiBean.RowsBean) adapter.getItemAtPosition(position));
+					intent.putExtra("url",itemAtPosition.getH5URL());
+					intent.putExtra("allow",itemAtPosition.getAllowcomments());
+					intent.putExtra("postnumb",itemAtPosition.getPostNum());
 					startActivity(intent);
 				} else if (s == 1) {
 					Intent intent = new Intent(getActivity(), ImagesActivity.class);
@@ -256,9 +267,9 @@ public class MassageFra extends Fragment implements SwipeRefreshLayout.OnRefresh
 	}
 
 	public List getData() {
-		String title[] = {"#关押25年再审6年# 刘忠林故意杀人案改判无罪！",
-				"#关押25年再审6年# 刘忠林故意杀人案改判无罪！",
-				"#关押25年再审6年# 刘忠林故意杀人案改判无罪！"};
+		String title[] = {"专家解读机构改革方案：合并归类重组 改革力度空前",
+				"专家解读机构改革方案：合并归类重组 改革力度空前",
+				"专家解读机构改革方案：合并归类重组 改革力度空前"};
 		String time[] = {"TextView", "TextView", "TextView"};
 		String a[] = {"刚刚", "刚刚", "刚刚"};
 		List list = new ArrayList();
@@ -278,9 +289,9 @@ public class MassageFra extends Fragment implements SwipeRefreshLayout.OnRefresh
 	}
 
 	public List getData2() {
-		String title[] = {"#关押25年再审6年# 刘忠林故意杀人案改判无罪！",
-				"#关押25年再审6年# 刘忠林故意杀人案改判无罪！",
-				"#关押25年再审6年# 刘忠林故意杀人案改判无罪！"};
+		String title[] = {"专家解读机构改革方案：合并归类重组 改革力度空前",
+				"专家解读机构改革方案：合并归类重组 改革力度空前",
+				"专家解读机构改革方案：合并归类重组 改革力度空前"};
 		String time[] = {"TextView", "TextView", "TextView"};
 		String a[] = {"刚刚", "刚刚", "刚刚"};
 		List list = new ArrayList();
@@ -304,7 +315,7 @@ public class MassageFra extends Fragment implements SwipeRefreshLayout.OnRefresh
         page = 1;
         mRequestCall = OkHttpUtils
                 .get()
-                .url("http://192.168.0.37:8086/zcm/zcm/nrfb/app/getAppArticleList/1/2018-04-25%2019:17:34/"+page+"/10")
+                .url(Constant.URL_GETARTICLELIST+page+"/10")
                 .build();
 
         mRequestCall.execute(new StringCallback() {
@@ -334,7 +345,7 @@ public class MassageFra extends Fragment implements SwipeRefreshLayout.OnRefresh
         page = ++page;
         mRequestCall = OkHttpUtils
                 .get()
-                .url("http://192.168.0.37:8086/zcm/zcm/nrfb/app/getAppArticleList/1/2018-04-25%2019:17:34/"+page+"/10")
+                .url(Constant.URL_GETARTICLELIST+page+"/10")
                 .build();
 
         mRequestCall.execute(new StringCallback() {
@@ -364,4 +375,15 @@ public class MassageFra extends Fragment implements SwipeRefreshLayout.OnRefresh
             }
         });
     }
+
+//	private CCProgressDialog ccProgressDialog;
+//	//初始化加载框
+//	private void initProgressDialog() {
+//		ccProgressDialog = CCProgressDialog.create(getActivity(), getResources().getString(R.string.common_loading), true, new DialogInterface.OnCancelListener() {
+//			@Override
+//			public void onCancel(DialogInterface dialog) {
+//				ccProgressDialog.dismiss();
+//			}
+//		});
+//	}
 }

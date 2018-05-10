@@ -6,10 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="cn.dhc.chinacultural.activity.NewsDetailActivity">
-
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#ffe60012"/>
     <include
         android:id="@+id/lay1"
-        layout="@layout/top_title"/>
+        layout="@layout/top_title"
+        android:layout_below="@+id/view1"
+        android:layout_height="48dp"
+        android:layout_width="match_parent"/>
 
     <WebView
         android:id="@+id/wv"

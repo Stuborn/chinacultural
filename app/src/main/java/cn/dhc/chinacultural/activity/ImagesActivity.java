@@ -8,6 +8,9 @@ import android.widget.ImageView;
 
 import cn.dhc.chinacultural.R;
 
+/**
+ * 图集详情页面
+ */
 public class ImagesActivity extends Activity {
 
     private ImageView pinglun,iv_back;

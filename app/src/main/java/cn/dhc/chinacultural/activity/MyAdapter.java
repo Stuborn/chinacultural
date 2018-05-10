@@ -181,20 +181,24 @@ public class MyAdapter extends BaseAdapter {
         // 设置资源
         switch (type) {
             case TYPE_1:
+                holder1.title.setText(mData.get(position).getTitle());
                 holder1.tv_a.setText(mData.get(position).getPublishTime());
                 holder1.tv_time.setVisibility(View.GONE);
                 break;
             case TYPE_2:
-                               holder2.tv_a.setText(mData.get(position).getPublishTime());
+                holder2.title.setText(mData.get(position).getTitle());
+                holder2.tv_a.setText(mData.get(position).getPublishTime());
                 holder2.tv_time.setVisibility(View.GONE);
                 break;
             case TYPE_3:
+                holder3.title.setText(mData.get(position).getTitle());
                 holder3.tv_a.setText(mData.get(position).getPublishTime());
                 holder3.tv_time.setVisibility(View.GONE);
 //                holder3.textView.setText(Integer.toString(position));
 //                holder3.imageView.setBackgroundResource(R.drawable.icon);
                 break;
             case TYPE_4:
+                holder4.title.setText(mData.get(position).getTitle());
                 holder4.tv_a.setText(mData.get(position).getPublishTime());
                 holder4.tv_time.setVisibility(View.GONE);
 //                holder3.textView.setText(Integer.toString(position));
